@@ -8,6 +8,8 @@ TagManager:
   - MovementRadius
   - Spawn
   - HighlightedBox
+  - OtherPlayer
+  - Obstacle
   layers:
   - Default
   - TransparentFX

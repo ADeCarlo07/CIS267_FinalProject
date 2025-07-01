@@ -21,18 +21,23 @@ public class PlayerControllerOnGrid : MonoBehaviour
     private float timeToMove = 0.2f;
     private bool isMoving;
     public float tileSize = 1.4f;
-    private bool validMove;
+    public static bool validMove;
     private Vector3 startPos;
     private bool startPosFound;
-   
-    
+    public static bool playerMoved;
+    private bool start;
+    public static bool ableToMove;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ableToMove = true;
+        start = true;
+        partyMembers[0].tag = "Player";
         selectedCharacter = partyMembers[0];
         partyMembers[0].GetComponent<HighlightCharacter>().selected = true;
+      
         partyLength = partyMembers.Length;
         playerTurn = true;
         canMove = true;
@@ -49,6 +54,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
             {
                 if (inputVertical == 1)
                 {
+                    start = false;
                     // % partyMembers.Length is so it loops around back to the beginning
                     currentIndex = (currentIndex - 1 + partyLength) % partyLength;
                     selectedCharacter = partyMembers[currentIndex];
@@ -58,18 +64,15 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     {
                         if (i == currentIndex)
                         {
-                            if(selectedCharacter.GetComponent<HighlightCharacter>().selected == true)
-                            {
-                                selectedCharacter.GetComponent<HighlightCharacter>().selected = false;
-                            }
-                            else
-                            {
-                                selectedCharacter.GetComponent<HighlightCharacter>().selected = true;
-                            }
-                                
+                        
+                            selectedCharacter.GetComponent<HighlightCharacter>().selected = true;
+                     
+
+                            selectedCharacter.tag = "Player";
                         }
                         else
                         {
+                            partyMembers[i].tag = "OtherPlayer";
                             partyMembers[i].GetComponent<HighlightCharacter>().selected = false;
 
                         }
@@ -81,6 +84,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                 }
                 else if (inputVertical == -1)
                 {
+                    start = false;
                     currentIndex = (currentIndex + 1) % partyLength;
                     selectedCharacter = partyMembers[currentIndex];
                     inputWaitTime = Time.time + inputCoolDown;
@@ -89,17 +93,13 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     {
                         if (i == currentIndex)
                         {
-                            if (selectedCharacter.GetComponent<HighlightCharacter>().selected == true)
-                            {
-                                selectedCharacter.GetComponent<HighlightCharacter>().selected = false;
-                            }
-                            else
-                            {
-                                selectedCharacter.GetComponent<HighlightCharacter>().selected = true;
-                            }
+                            selectedCharacter.GetComponent<HighlightCharacter>().selected = true;
+
+                            selectedCharacter.tag = "Player";
                         }
                         else
                         {
+                            partyMembers[i].tag = "OtherPlayer";
                             partyMembers[i].GetComponent<HighlightCharacter>().selected = false;
 
                         }
@@ -116,12 +116,13 @@ public class PlayerControllerOnGrid : MonoBehaviour
 
     private void moveSelectedCharacter()
     {
-        if (playerTurn)
+        if (playerTurn && ableToMove)
         {
-           
 
-            if (Gamepad.current.aButton.isPressed)
+
+            if (Gamepad.current.aButton.isPressed || Keyboard.current.leftShiftKey.isPressed)
             {
+              
                 if (!startPosFound)
                 {
                     startPos = selectedCharacter.transform.position;
@@ -129,17 +130,18 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     startPosFound = true;
 
                 }
-              
+
                 canMove = false;
-               
-                
+
+
                 if (inputHorizontal == 1 && !isMoving && inMovementBounds)
                 {
+                 
                     //right
                     Vector3 tarPos = selectedCharacter.transform.position + (Vector3.right * tileSize);
                     //gets all colliders in the area
                     Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
-                    
+
                     validMove = false;
                     for (int i = 0; i < hits.Length; i++)
                     {
@@ -155,10 +157,11 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     {
                         StartCoroutine(MoveSelectedCharacter(Vector3.right));
                     }
-                    
+
                 }
                 if (inputHorizontal == -1 && !isMoving && inMovementBounds)
                 {
+                  
                     //left
                     Vector3 tarPos = selectedCharacter.transform.position + (Vector3.left * tileSize);
                     //gets all colliders in the area
@@ -183,6 +186,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                 }
                 if (inputVertical == 1 && !isMoving && inMovementBounds)
                 {
+             
                     //up
                     Vector3 tarPos = selectedCharacter.transform.position + (Vector3.up * tileSize);
                     //gets all colliders in the area
@@ -206,6 +210,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                 }
                 if (inputVertical == -1 && !isMoving && inMovementBounds)
                 {
+           
                     //down
                     Vector3 tarPos = selectedCharacter.transform.position + (Vector3.down * tileSize);
                     //gets all colliders in the area
@@ -229,23 +234,49 @@ public class PlayerControllerOnGrid : MonoBehaviour
 
                 }
             }
+          
 
-            if (Gamepad.current.bButton.wasPressedThisFrame)
+            //====================================================================
+            if (Gamepad.current.bButton.wasPressedThisFrame || Keyboard.current.eKey.wasPressedThisFrame)
             {
- 
+                Debug.Log("b was pressed");
                 canMove = true;
+
+
                 selectedCharacter.transform.position = startPos;
                 startPosFound = false;
 
-                ClearHighlightBoxes();
+                clearHighlightBoxes();
 
             }
+          
+
+            //================================================================
+            if (Gamepad.current.xButton.wasPressedThisFrame || Keyboard.current.qKey.wasPressedThisFrame)
+            {
+
+                Debug.Log("x was pressed");
 
 
+               
+                if (!start)
+                {
+                    clearHighlightBoxes();
+                    clearHighlightBoxes();
+                }
 
+                selectedCharacter.GetComponent<HighlightCharacter>().recenterRadius();
+
+                ableToMove = false;
+                canMove = true;
+
+                playerMoved = true;
+            }
+           
+            
         }
     }
-    private void ClearHighlightBoxes()
+    private void clearHighlightBoxes()
     {
         GameObject[] allHighlights = GameObject.FindGameObjectsWithTag("HighlightedBox");
 
@@ -295,6 +326,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         inputVertical = Input.GetAxisRaw("Vertical");
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 

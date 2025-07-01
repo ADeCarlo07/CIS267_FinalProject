@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -12,19 +13,33 @@ public class HighlightCharacter : MonoBehaviour
         
     }
 
+    public void recenterRadius()
+    {
+        movementRadius.SetActive(false);
+        //movementRadius.transform.SetParent(transform, false);
+        movementRadius.transform.position = transform.position;
+        movementRadius.SetActive(true);
+
+
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (PlayerControllerOnGrid.canMove == false)
         {
-            movementRadius.transform.parent = null;
+            if (movementRadius.transform.parent != null)
+            {
+                movementRadius.transform.parent = null;
+            }
+           
         }
+   
 
-     
 
         if (selected)
         {
+
             highlight.SetActive(true);
             movementRadius.SetActive(true);
         }

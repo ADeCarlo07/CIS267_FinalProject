@@ -4,7 +4,7 @@ using UnityEngine;
 public class HighlightBox : MonoBehaviour
 {
 
-    private float destroyDelay = 0.05f;
+    private float destroyDelay = 0.04f;
     private float timeUnhighlighted;
     public bool highlighted;
 
@@ -30,11 +30,30 @@ public class HighlightBox : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("OtherPlayer"))
+        {
+            PlayerControllerOnGrid.validMove = false;
+            Destroy(gameObject);
+            //highlighted = false;
+        }
+
+        if(collision.gameObject.CompareTag("Obstacle"))
+        {
+            PlayerControllerOnGrid.validMove = false;
+            Destroy(gameObject);
+            //highlighted = false;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerControllerOnGrid.inMovementBounds = true;
+
+
+            highlighted = false;
         }
     }
 
