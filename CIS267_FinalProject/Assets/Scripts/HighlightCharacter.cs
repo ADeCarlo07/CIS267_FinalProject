@@ -40,12 +40,12 @@ public class HighlightCharacter : MonoBehaviour
         if (selected)
         {
 
-            highlight.SetActive(true);
+            //highlight.SetActive(true);
             movementRadius.SetActive(true);
         }
         if (!selected)
         {
-            highlight.SetActive(false);
+            //highlight.SetActive(false);
             movementRadius.SetActive(false);
         }
     }

@@ -7,7 +7,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
 {
     private float inputVertical;
     private float inputHorizontal;
-    public bool playerTurn;
+    public static bool playerTurn;
     private int currentIndex = 0;
     public GameObject[] partyMembers;
     private int partyLength;
@@ -17,7 +17,8 @@ public class PlayerControllerOnGrid : MonoBehaviour
     private float inputCoolDown = 0.2f;
     public static bool inMovementBounds = true;
     public Transform movePoint;
-    private Vector3 origPos, targetPos;
+    private Vector3 origPos;
+    private Vector3 targetPos;
     private float timeToMove = 0.2f;
     private bool isMoving;
     public float tileSize = 1.4f;
@@ -25,7 +26,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
     private Vector3 startPos;
     private bool startPosFound;
     public static bool playerMoved;
-    private bool start;
+    //private bool start;
     public static bool ableToMove;
     
 
@@ -33,7 +34,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
     void Start()
     {
         ableToMove = true;
-        start = true;
+        //start = true;
         partyMembers[0].tag = "Player";
         selectedCharacter = partyMembers[0];
         partyMembers[0].GetComponent<HighlightCharacter>().selected = true;
@@ -46,6 +47,8 @@ public class PlayerControllerOnGrid : MonoBehaviour
 
     private void moveToSelectedCharacter()
     {
+        //this function isn't useful anymore. Was only to be used if there was multiple characters/players in the party!!!!!
+        //Just in case some pieces of code are useful I will keep it
         if (playerTurn && canMove)
         {
             inputVertical = Input.GetAxisRaw("Vertical");
@@ -54,7 +57,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
             {
                 if (inputVertical == 1)
                 {
-                    start = false;
+                    //start = false;
                     // % partyMembers.Length is so it loops around back to the beginning
                     currentIndex = (currentIndex - 1 + partyLength) % partyLength;
                     selectedCharacter = partyMembers[currentIndex];
@@ -84,7 +87,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                 }
                 else if (inputVertical == -1)
                 {
-                    start = false;
+                    //start = false;
                     currentIndex = (currentIndex + 1) % partyLength;
                     selectedCharacter = partyMembers[currentIndex];
                     inputWaitTime = Time.time + inputCoolDown;
@@ -246,7 +249,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                 selectedCharacter.transform.position = startPos;
                 startPosFound = false;
 
-                clearHighlightBoxes();
+                //clearHighlightBoxes();
 
             }
           
@@ -259,11 +262,10 @@ public class PlayerControllerOnGrid : MonoBehaviour
 
 
                
-                if (!start)
-                {
-                    clearHighlightBoxes();
-                    clearHighlightBoxes();
-                }
+                //if (!start)
+                //{
+                //    clearHighlightBoxes();
+                //}
 
                 selectedCharacter.GetComponent<HighlightCharacter>().recenterRadius();
 
@@ -271,6 +273,9 @@ public class PlayerControllerOnGrid : MonoBehaviour
                 canMove = true;
 
                 playerMoved = true;
+
+                playerTurn = false;
+                EnemyPathfinding.enemyTurn = true;
             }
            
             
@@ -278,6 +283,8 @@ public class PlayerControllerOnGrid : MonoBehaviour
     }
     private void clearHighlightBoxes()
     {
+        //This function was only used if there was multiple characters in the party!!!!
+        //Could still be useful later on, so I wont delete
         GameObject[] allHighlights = GameObject.FindGameObjectsWithTag("HighlightedBox");
 
         foreach (GameObject box in allHighlights)
@@ -313,6 +320,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
         selectedCharacter.transform.position = targetPos;
 
         isMoving = false;
+        
     }
 
   
@@ -330,7 +338,8 @@ public class PlayerControllerOnGrid : MonoBehaviour
         inputVertical = Input.GetAxisRaw("Vertical");
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
-        moveToSelectedCharacter();
+        //moveToSelectedCharacter();
         moveSelectedCharacter();
+        
     }
 }
