@@ -37,7 +37,7 @@ public class EnemyPathfinding : MonoBehaviour
     private void FindingPath()
     {
         Debug.Log("finding path");
-        GameObject[] highlightedBoxes = GameObject.FindGameObjectsWithTag("HighlightedBox");
+        GameObject[] highlightedBoxes = GameObject.FindGameObjectsWithTag("EnemyHighlightedBox");
         GameObject closestPos = null;
 
         //this is set to infinity so that way at the start you will always find

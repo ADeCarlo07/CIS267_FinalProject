@@ -32,12 +32,12 @@ public class HighlightBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("OtherPlayer"))
-        {
-            PlayerControllerOnGrid.validMove = false;
-            Destroy(gameObject);
-            //highlighted = false;
-        }
+        //if (collision.gameObject.CompareTag("OtherPlayer"))
+        //{
+        //    PlayerControllerOnGrid.validMove = false;
+        //    Destroy(gameObject);
+        //    //highlighted = false;
+        //}
 
         if(collision.gameObject.CompareTag("Obstacle"))
         {
