@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RangeFromPlayer : MonoBehaviour
 {
-    public bool playerTooClose;
+    public static bool playerTooClose;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +19,7 @@ public class RangeFromPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("player too close");
             playerTooClose = true;
         }
     }
