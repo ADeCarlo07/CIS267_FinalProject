@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using static Unity.Cinemachine.IInputAxisOwner.AxisDescriptor;
 
-public class EnemyMovementLeftRight : MonoBehaviour
+public class EnemyMovementUpDown : MonoBehaviour
 {
     private Vector3 origPos;
     private Vector3 targetPos;
@@ -12,7 +11,7 @@ public class EnemyMovementLeftRight : MonoBehaviour
     private bool occupiedByPlayer;
     public static bool enemyTurn;
     public GameObject attackRadius;
-    private bool movingLeft = true;
+    private bool movingUp = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,24 +25,24 @@ public class EnemyMovementLeftRight : MonoBehaviour
         {
             if (attackRadius.GetComponent<AttackRadius>().playerInRadius != true)
             {
-
-                MoveLeftToRight();
+                Debug.Log("Moving");
+                MoveUpDown();
 
             }
         }
     }
 
-    private void MoveLeftToRight()
+    private void MoveUpDown()
     {
         Vector3 direction;
 
-        if (movingLeft)
+        if (movingUp)
         {
-            direction = Vector3.left;
+            direction = Vector3.up;
         }
         else
         {
-            direction = Vector3.right;
+            direction = Vector3.down;
         }
 
         Vector3 tarPos = transform.position + (direction * tileSize);
@@ -74,16 +73,16 @@ public class EnemyMovementLeftRight : MonoBehaviour
         else
         {
             //set it to the opposite of what it is
-            movingLeft = !movingLeft;
+            movingUp = !movingUp;
 
             Vector3 reverseDir;
-            if (movingLeft)
+            if (movingUp)
             {
-                reverseDir = Vector3.left;
+                reverseDir = Vector3.up;
             }
             else
             {
-                reverseDir = Vector3.right;
+                reverseDir = Vector3.down;
             }
 
             Vector3 reversePos = transform.position + reverseDir * tileSize;

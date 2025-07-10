@@ -275,6 +275,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     playerTurn = false;
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
+                    EnemyMovementUpDown.enemyTurn = true;
                 }
 
             }
@@ -433,6 +434,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                 playerTurn = false;
                 EnemyPathfinding.enemyTurn = true;
                 EnemyMovementLeftRight.enemyTurn = true;
+                EnemyMovementUpDown.enemyTurn = true;
             }
             
         }
