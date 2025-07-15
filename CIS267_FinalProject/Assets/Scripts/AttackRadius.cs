@@ -3,6 +3,7 @@ using UnityEngine;
 public class AttackRadius : MonoBehaviour
 {
     public bool playerInRadius;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +22,8 @@ public class AttackRadius : MonoBehaviour
         {
             Debug.Log("Player in radius");
             playerInRadius = true;
+
+            
         }
     }
 

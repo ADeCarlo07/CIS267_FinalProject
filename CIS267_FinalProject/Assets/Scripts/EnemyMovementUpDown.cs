@@ -114,7 +114,6 @@ public class EnemyMovementUpDown : MonoBehaviour
 
         enemyTurn = false;
         PlayerControllerOnGrid.playerTurn = true;
-        PlayerControllerOnGrid.ableToMove = true;
 
     }
 

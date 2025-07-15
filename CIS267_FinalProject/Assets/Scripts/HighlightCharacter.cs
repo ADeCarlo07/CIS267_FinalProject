@@ -37,16 +37,16 @@ public class HighlightCharacter : MonoBehaviour
    
 
 
-        if (selected)
-        {
+        //if (selected)
+        //{
 
-            //highlight.SetActive(true);
-            movementRadius.SetActive(true);
-        }
-        if (!selected)
-        {
-            //highlight.SetActive(false);
-            movementRadius.SetActive(false);
-        }
+        //    //highlight.SetActive(true);
+        //    movementRadius.SetActive(true);
+        //}
+        //if (!selected)
+        //{
+        //    //highlight.SetActive(false);
+        //    movementRadius.SetActive(false);
+        //}
     }
 }

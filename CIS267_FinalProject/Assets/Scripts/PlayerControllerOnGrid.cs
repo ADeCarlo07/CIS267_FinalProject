@@ -1,7 +1,9 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerControllerOnGrid : MonoBehaviour
 {
@@ -28,12 +30,13 @@ public class PlayerControllerOnGrid : MonoBehaviour
     public static bool playerMoved;
     //private bool start;
     public static bool ableToMove;
-    
+    public GameObject movementRadius;
+    public GameObject moveButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ableToMove = true;
+        //ableToMove = true;
         //start = true;
         partyMembers[0].tag = "Player";
         selectedCharacter = partyMembers[0];
@@ -41,6 +44,8 @@ public class PlayerControllerOnGrid : MonoBehaviour
       
         partyLength = partyMembers.Length;
         playerTurn = true;
+
+        //canMove was for selecting through different characters, in other words it "could move" to each character
         canMove = true;
         
     }
@@ -273,9 +278,11 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     playerMoved = true;
 
                     playerTurn = false;
+                    movementRadius.SetActive(false);
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+
                 }
 
             }
@@ -432,6 +439,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                 playerMoved = true;
 
                 playerTurn = false;
+                movementRadius.SetActive(false);
                 EnemyPathfinding.enemyTurn = true;
                 EnemyMovementLeftRight.enemyTurn = true;
                 EnemyMovementUpDown.enemyTurn = true;
@@ -498,6 +506,11 @@ public class PlayerControllerOnGrid : MonoBehaviour
 
         //moveToSelectedCharacter();
         moveSelectedCharacter();
+
+        if (playerTurn && ableToMove)
+        {
+            EventSystem.current.SetSelectedGameObject(moveButton);
+        }
         
     }
 }
