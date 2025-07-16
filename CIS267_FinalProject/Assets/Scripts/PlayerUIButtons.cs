@@ -6,6 +6,15 @@ public class PlayerUIButtons : MonoBehaviour
 {
     public GameObject playerMovementRadius;
     public Button move;
+    public Button abilities;
+    public Button inventory;
+    public Button skipTurn;
+    public static bool buttonPressed;
+    public static bool moveButtonPressed;
+    public static bool abilitiesButtonPressed;
+    public static bool inventoryButtonPressed;
+    public GameObject abilityHolder;
+    public GameObject firstAbility;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +25,21 @@ public class PlayerUIButtons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        if (buttonPressed == true)
+        {
+            move.enabled = false;
+            abilities.enabled = false;
+            inventory.enabled = false;
+            skipTurn.enabled = false;
+        }
+
+        if (buttonPressed == false)
+        {
+            move.enabled = true;
+            abilities.enabled = true;
+            inventory.enabled = true;
+            skipTurn.enabled = true;
+        }
     }
 
     public void MoveButton()
@@ -25,12 +48,17 @@ public class PlayerUIButtons : MonoBehaviour
         PlayerControllerOnGrid.ableToMove = true;
         playerMovementRadius.SetActive(true);
 
-        EventSystem.current.SetSelectedGameObject(null);
+        moveButtonPressed = true;
+        buttonPressed = true;
     }
 
     public void AbilitiesButton()
     {
-
+        abilityHolder.SetActive(true);
+        abilitiesButtonPressed = true;
+        EventSystem.current.SetSelectedGameObject(firstAbility);
+        buttonPressed = true;
+        
     }
 
     public void InventoryButton()

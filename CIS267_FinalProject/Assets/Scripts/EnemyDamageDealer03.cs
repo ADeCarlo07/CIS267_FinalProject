@@ -25,7 +25,6 @@ public class EnemyDamageDealer03 : MonoBehaviour
 
             EnemyPathfinding.enemyTurn = false;
             PlayerControllerOnGrid.playerTurn = true;
-            PlayerControllerOnGrid.ableToMove = true;
         }
 
         if (!EnemyPathfinding.enemyTurn)

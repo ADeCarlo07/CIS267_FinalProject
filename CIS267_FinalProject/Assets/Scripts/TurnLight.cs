@@ -19,7 +19,7 @@ public class TurnLight : MonoBehaviour
           
             if (PlayerTurnLight.gameObject.activeSelf == false)
             {
-                Debug.Log("Player Turn");
+                //Debug.Log("Player Turn");
                 PlayerTurnLight.gameObject.SetActive(true);
                 EnemyTurnLight.gameObject.SetActive(false);
             }
@@ -27,7 +27,7 @@ public class TurnLight : MonoBehaviour
         }
         else if (EnemyPathfinding.enemyTurn || EnemyMovementUpDown.enemyTurn || EnemyMovementLeftRight.enemyTurn)
         {
-            Debug.Log("Enemy Turn");
+            //Debug.Log("Enemy Turn");
             PlayerTurnLight.gameObject.SetActive(false);
             EnemyTurnLight.gameObject.SetActive(true);
         }

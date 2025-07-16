@@ -32,6 +32,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
     public static bool ableToMove;
     public GameObject movementRadius;
     public GameObject moveButton;
+    public GameObject abilityHolder;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -129,15 +130,17 @@ public class PlayerControllerOnGrid : MonoBehaviour
 
             if (Gamepad.current == null)
             {
+                if (!startPosFound)
+                {
+                    startPos = selectedCharacter.transform.position;
+                    Debug.Log(startPos);
+                    startPosFound = true;
+
+                }
+
                 if (Keyboard.current.leftShiftKey.isPressed)
                 {
-                    if (!startPosFound)
-                    {
-                        startPos = selectedCharacter.transform.position;
-                        Debug.Log(startPos);
-                        startPosFound = true;
-
-                    }
+                    
 
                     canMove = false;
 
@@ -245,17 +248,16 @@ public class PlayerControllerOnGrid : MonoBehaviour
 
 
                 //======================
-                if (Keyboard.current.eKey.wasPressedThisFrame)
-                {
-                    Debug.Log("b was pressed");
-                    canMove = true;
+                //if (Keyboard.current.eKey.wasPressedThisFrame)
+                //{
+                //    Debug.Log("b was pressed");
+                //    canMove = true;
 
 
-                    selectedCharacter.transform.position = startPos;
-                    startPosFound = false;
+                //    selectedCharacter.transform.position = startPos;
 
-                    //clearHighlightBoxes();
-                }
+                //    //clearHighlightBoxes();
+                //}
 
                 //=======================
                 if (Keyboard.current.qKey.wasPressedThisFrame)
@@ -282,167 +284,237 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    PlayerUIButtons.buttonPressed = false;
 
                 }
 
             }
-
-            else if (Gamepad.current.aButton.isPressed)
+            else
             {
-              
+
                 if (!startPosFound)
                 {
                     startPos = selectedCharacter.transform.position;
-                    Debug.Log(startPos);
                     startPosFound = true;
 
                 }
 
-                canMove = false;
-
-
-                if (inputHorizontal == 1 && !isMoving && inMovementBounds)
+                if (Gamepad.current.aButton.isPressed)
                 {
-                 
-                    //right
-                    Vector3 tarPos = selectedCharacter.transform.position + (Vector3.right * tileSize);
-                    //gets all colliders in the area
-                    Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
-                    validMove = false;
-                    for (int i = 0; i < hits.Length; i++)
+
+                    canMove = false;
+
+
+                    if (inputHorizontal == 1 && !isMoving && inMovementBounds)
                     {
-                        HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                        if (tile != null && tile.highlighted)
+
+                        //right
+                        Vector3 tarPos = selectedCharacter.transform.position + (Vector3.right * tileSize);
+                        //gets all colliders in the area
+                        Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
+
+                        validMove = false;
+                        for (int i = 0; i < hits.Length; i++)
                         {
-                            validMove = true;
-                            break;
+                            HighlightBox tile = hits[i].GetComponent<HighlightBox>();
+                            if (tile != null && tile.highlighted)
+                            {
+                                validMove = true;
+                                break;
+                            }
+                        }
+
+                        if (validMove)
+                        {
+                            StartCoroutine(MoveSelectedCharacter(Vector3.right));
+                        }
+
+                    }
+                    if (inputHorizontal == -1 && !isMoving && inMovementBounds)
+                    {
+
+                        //left
+                        Vector3 tarPos = selectedCharacter.transform.position + (Vector3.left * tileSize);
+                        //gets all colliders in the area
+                        Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
+
+                        validMove = false;
+                        for (int i = 0; i < hits.Length; i++)
+                        {
+                            HighlightBox tile = hits[i].GetComponent<HighlightBox>();
+                            if (tile != null && tile.highlighted)
+                            {
+                                validMove = true;
+                                break;
+                            }
+                        }
+
+                        if (validMove)
+                        {
+                            StartCoroutine(MoveSelectedCharacter(Vector3.left));
+                        }
+
+                    }
+                    if (inputVertical == 1 && !isMoving && inMovementBounds)
+                    {
+
+                        //up
+                        Vector3 tarPos = selectedCharacter.transform.position + (Vector3.up * tileSize);
+                        //gets all colliders in the area
+                        Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
+
+                        validMove = false;
+                        for (int i = 0; i < hits.Length; i++)
+                        {
+                            HighlightBox tile = hits[i].GetComponent<HighlightBox>();
+                            if (tile != null && tile.highlighted)
+                            {
+                                validMove = true;
+                                break;
+                            }
+                        }
+
+                        if (validMove)
+                        {
+                            StartCoroutine(MoveSelectedCharacter(Vector3.up));
                         }
                     }
-
-                    if (validMove)
+                    if (inputVertical == -1 && !isMoving && inMovementBounds)
                     {
-                        StartCoroutine(MoveSelectedCharacter(Vector3.right));
-                    }
 
-                }
-                if (inputHorizontal == -1 && !isMoving && inMovementBounds)
-                {
-                  
-                    //left
-                    Vector3 tarPos = selectedCharacter.transform.position + (Vector3.left * tileSize);
-                    //gets all colliders in the area
-                    Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
+                        //down
+                        Vector3 tarPos = selectedCharacter.transform.position + (Vector3.down * tileSize);
+                        //gets all colliders in the area
+                        Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
-                    validMove = false;
-                    for (int i = 0; i < hits.Length; i++)
-                    {
-                        HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                        if (tile != null && tile.highlighted)
+                        validMove = false;
+                        for (int i = 0; i < hits.Length; i++)
                         {
-                            validMove = true;
-                            break;
+                            HighlightBox tile = hits[i].GetComponent<HighlightBox>();
+                            if (tile != null && tile.highlighted)
+                            {
+                                validMove = true;
+                                break;
+                            }
                         }
-                    }
 
-                    if (validMove)
-                    {
-                        StartCoroutine(MoveSelectedCharacter(Vector3.left));
-                    }
-
-                }
-                if (inputVertical == 1 && !isMoving && inMovementBounds)
-                {
-             
-                    //up
-                    Vector3 tarPos = selectedCharacter.transform.position + (Vector3.up * tileSize);
-                    //gets all colliders in the area
-                    Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
-
-                    validMove = false;
-                    for (int i = 0; i < hits.Length; i++)
-                    {
-                        HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                        if (tile != null && tile.highlighted)
+                        if (validMove)
                         {
-                            validMove = true;
-                            break;
+                            StartCoroutine(MoveSelectedCharacter(Vector3.down));
                         }
-                    }
 
-                    if (validMove)
-                    {
-                        StartCoroutine(MoveSelectedCharacter(Vector3.up));
                     }
                 }
-                if (inputVertical == -1 && !isMoving && inMovementBounds)
-                {
-           
-                    //down
-                    Vector3 tarPos = selectedCharacter.transform.position + (Vector3.down * tileSize);
-                    //gets all colliders in the area
-                    Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
-
-                    validMove = false;
-                    for (int i = 0; i < hits.Length; i++)
-                    {
-                        HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                        if (tile != null && tile.highlighted)
-                        {
-                            validMove = true;
-                            break;
-                        }
-                    }
-
-                    if (validMove)
-                    {
-                        StartCoroutine(MoveSelectedCharacter(Vector3.down));
-                    }
-
-                }
-            }
-
-            
-            //====================================================================
-            else if (Gamepad.current.bButton.wasPressedThisFrame)
-            {
-                Debug.Log("b was pressed");
-                canMove = true;
 
 
-                selectedCharacter.transform.position = startPos;
-                startPosFound = false;
-
-                //clearHighlightBoxes();
-
-            }
-
-
-            //================================================================
-            else if (Gamepad.current.xButton.wasPressedThisFrame)
-            {
-
-                Debug.Log("x was pressed");
-
-
-               
-                //if (!start)
+                //====================================================================
+                //else if (Gamepad.current.bButton.wasPressedThisFrame)
                 //{
-                //    clearHighlightBoxes();
+                    
+                //    Debug.Log("b was pressed");
+                //    canMove = true;
+
+                //    //if (PlayerUIButtons.moveButtonPressed)
+                //    //{
+
+                //    //}
+                //    selectedCharacter.transform.position = startPos;
+                    
+                //    //clearHighlightBoxes();
+
                 //}
 
-                selectedCharacter.GetComponent<HighlightCharacter>().recenterRadius();
 
-                ableToMove = false;
-                canMove = true;
+                //================================================================
+                else if (Gamepad.current.xButton.wasPressedThisFrame)
+                {
 
-                playerMoved = true;
+                    Debug.Log("x was pressed");
 
-                playerTurn = false;
-                movementRadius.SetActive(false);
-                EnemyPathfinding.enemyTurn = true;
-                EnemyMovementLeftRight.enemyTurn = true;
-                EnemyMovementUpDown.enemyTurn = true;
+
+
+                    //if (!start)
+                    //{
+                    //    clearHighlightBoxes();
+                    //}
+
+                    selectedCharacter.GetComponent<HighlightCharacter>().recenterRadius();
+
+                    ableToMove = false;
+                    canMove = true;
+
+                    playerMoved = true;
+
+                    playerTurn = false;
+                    movementRadius.SetActive(false);
+                    EnemyPathfinding.enemyTurn = true;
+                    EnemyMovementLeftRight.enemyTurn = true;
+                    EnemyMovementUpDown.enemyTurn = true;
+                    PlayerUIButtons.buttonPressed = false;
+                }
+            }
+            
+        }
+
+        if (playerTurn)
+        {
+            if (Gamepad.current == null)
+            {
+                if (Keyboard.current.eKey.wasPressedThisFrame)
+                {
+                    Debug.Log("b was pressed");
+                    canMove = true;
+
+                    if (PlayerUIButtons.moveButtonPressed)
+                    {
+                        selectedCharacter.transform.position = startPos;
+                        movementRadius.SetActive(false);
+                        PlayerUIButtons.buttonPressed = false;
+                    }
+                    else if (PlayerUIButtons.abilitiesButtonPressed)
+                    {
+                        abilityHolder.SetActive(false);
+                        PlayerUIButtons.buttonPressed = false;
+                    }
+                    else if (PlayerUIButtons.inventoryButtonPressed)
+                    {
+
+                    }
+                    
+
+                    //clearHighlightBoxes();
+                }
+            }
+            else
+            {
+                if (Gamepad.current.bButton.wasPressedThisFrame)
+                {
+
+                    Debug.Log("b was pressed");
+                    canMove = true;
+
+                    if (PlayerUIButtons.moveButtonPressed)
+                    {
+                        selectedCharacter.transform.position = startPos;
+                        movementRadius.SetActive(false);
+                        PlayerUIButtons.buttonPressed = false;
+                    }
+                    else if (PlayerUIButtons.abilitiesButtonPressed)
+                    {
+                        abilityHolder.SetActive(false);
+                        PlayerUIButtons.buttonPressed = false;
+    
+                    }
+                    else if (PlayerUIButtons.inventoryButtonPressed)
+                    {
+
+                    }
+
+
+                    //clearHighlightBoxes();
+
+                }
             }
             
         }
@@ -500,17 +572,21 @@ public class PlayerControllerOnGrid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (!PlayerUIButtons.buttonPressed)
+        {
+            startPosFound = false;
+        }
+
         inputVertical = Input.GetAxisRaw("Vertical");
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
         //moveToSelectedCharacter();
         moveSelectedCharacter();
 
-        if (playerTurn && ableToMove)
-        {
-            EventSystem.current.SetSelectedGameObject(moveButton);
-        }
+        //if (playerturn && abletomove)
+        //{
+        //    eventsystem.current.setselectedgameobject(movebutton);
+        //}
         
     }
 }
