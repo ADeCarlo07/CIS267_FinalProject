@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 9dfd7cef9bc6a5844b0cf1377c7d505e
+guid: 16a73688683e847449c1380a982e2be4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1080467866086708904
-    second: CombatSymbol_0
-  - first:
-      213: -2462706484487527483
-    second: CombatSymbol_1
+      213: -1743043194500990878
+    second: JerryCan_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,6 +97,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -125,30 +135,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CombatSymbol_0
+      name: JerryCan_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 409
-        width: 231
-        height: 231
+        x: 39
+        y: 9
+        width: 232
+        height: 302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,30 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8596daa43386101f0800000000000000
-      internalID: -1080467866086708904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CombatSymbol_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 159
-        width: 231
-        height: 232
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c3e1161085b2ddd0800000000000000
-      internalID: -2462706484487527483
+      spriteID: 2683b9b13777fc7e0800000000000000
+      internalID: -1743043194500990878
       vertices: []
       indices: 
       edges: []
@@ -198,9 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      CombatSymbol_0: -1080467866086708904
-      CombatSymbol_1: -2462706484487527483
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

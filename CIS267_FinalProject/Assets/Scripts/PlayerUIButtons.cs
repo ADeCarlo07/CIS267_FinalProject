@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -14,15 +15,11 @@ public class PlayerUIButtons : MonoBehaviour
     public static bool abilitiesButtonPressed;
     public static bool inventoryButtonPressed;
     public GameObject abilityHolder;
+    public GameObject inventoryHolder;
     public GameObject firstAbility;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public TextMeshProUGUI[] InventorySlots = new TextMeshProUGUI[3];
 
-    // Update is called once per frame
     void Update()
     {
         if (buttonPressed == true)
@@ -54,6 +51,7 @@ public class PlayerUIButtons : MonoBehaviour
 
     public void AbilitiesButton()
     {
+        
         abilityHolder.SetActive(true);
         abilitiesButtonPressed = true;
         EventSystem.current.SetSelectedGameObject(firstAbility);
@@ -63,7 +61,18 @@ public class PlayerUIButtons : MonoBehaviour
 
     public void InventoryButton()
     {
+        for (int i = 0; i < InventorySlots.Length; i++)
+        {
+            if (InventoryManager.
+            {
 
+            }
+        }
+
+        inventoryHolder.SetActive(true);
+        inventoryButtonPressed = true;
+
+        buttonPressed = true;
     }
 
     public void SkipTurnButton()
