@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -63,10 +64,10 @@ public class PlayerUIButtons : MonoBehaviour
     {
         for (int i = 0; i < InventorySlots.Length; i++)
         {
-            if (InventoryManager.
+            if(InventoryManager.GetItem(i) != null)
             {
-
-            }
+                InventorySlots[i].text = InventoryManager.GetItem(i);
+            }    
         }
 
         inventoryHolder.SetActive(true);

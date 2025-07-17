@@ -517,9 +517,10 @@ MonoBehaviour:
   abilityHolder: {fileID: 1262915399}
   inventoryHolder: {fileID: 1215987679}
   firstAbility: {fileID: 1496027784}
-  inventoryItemSlot1: {fileID: 1861667174}
-  inventoryItemSlot2: {fileID: 67286591}
-  inventoryItemSlot3: {fileID: 621987468}
+  InventorySlots:
+  - {fileID: 417951512}
+  - {fileID: 458844021}
+  - {fileID: 1472258576}
 --- !u!114 &57869030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,7 +1236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 124944237}
   m_Layer: 0
-  m_Name: AbilitiesButtons
+  m_Name: InventoryButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
