@@ -12,6 +12,10 @@ TagManager:
   - Obstacle
   - EnemyHighlightedBox
   - EnemyMovementRadius
+  - EnemyAttackRadius
+  - PlayerAttackRadius
+  - Enemy
+  - GridBorder
   layers:
   - Default
   - TransparentFX

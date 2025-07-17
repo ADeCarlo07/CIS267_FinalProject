@@ -31,8 +31,9 @@ public class PlayerControllerOnGrid : MonoBehaviour
     //private bool start;
     public static bool ableToMove;
     public GameObject movementRadius;
-    public GameObject moveButton;
+    public Button moveButton;
     public GameObject abilityHolder;
+    private bool occupiedByEnemy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -153,18 +154,24 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         //gets all colliders in the area
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
+                        occupiedByEnemy = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
+                            if (hits[i].CompareTag("Enemy"))
+                            {
+                                occupiedByEnemy = true;
+                            }
+
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
                             if (tile != null && tile.highlighted)
                             {
                                 validMove = true;
-                                break;
+                                
                             }
                         }
 
-                        if (validMove)
+                        if (validMove && !occupiedByEnemy)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.right));
                         }
@@ -178,18 +185,24 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         //gets all colliders in the area
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
+                        occupiedByEnemy = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
+                            if (hits[i].CompareTag("Enemy"))
+                            {
+                                occupiedByEnemy = true;
+                            }
+
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
                             if (tile != null && tile.highlighted)
                             {
                                 validMove = true;
-                                break;
+                                
                             }
                         }
 
-                        if (validMove)
+                        if (validMove && !occupiedByEnemy)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.left));
                         }
@@ -203,18 +216,24 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         //gets all colliders in the area
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
+                        occupiedByEnemy = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
+                            if (hits[i].CompareTag("Enemy"))
+                            {
+                                occupiedByEnemy = true;
+                            }
+
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
                             if (tile != null && tile.highlighted)
                             {
                                 validMove = true;
-                                break;
+                                
                             }
                         }
 
-                        if (validMove)
+                        if (validMove && !occupiedByEnemy)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.up));
                         }
@@ -227,18 +246,24 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         //gets all colliders in the area
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
+                        occupiedByEnemy = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
+                            if (hits[i].CompareTag("Enemy"))
+                            {
+                                occupiedByEnemy = true;
+                            }
+
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
                             if (tile != null && tile.highlighted)
                             {
                                 validMove = true;
-                                break;
+                                
                             }
                         }
 
-                        if (validMove)
+                        if (validMove && !occupiedByEnemy)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.down));
                         }
@@ -314,18 +339,24 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         //gets all colliders in the area
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
+                        occupiedByEnemy = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
+                            if (hits[i].CompareTag("Enemy"))
+                            {
+                                occupiedByEnemy = true;
+                            }
+
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
                             if (tile != null && tile.highlighted)
                             {
                                 validMove = true;
-                                break;
+                                
                             }
                         }
 
-                        if (validMove)
+                        if (validMove && !occupiedByEnemy)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.right));
                         }
@@ -339,6 +370,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         //gets all colliders in the area
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
+                        occupiedByEnemy = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
@@ -346,11 +378,11 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             if (tile != null && tile.highlighted)
                             {
                                 validMove = true;
-                                break;
+                                
                             }
                         }
 
-                        if (validMove)
+                        if (validMove && !occupiedByEnemy)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.left));
                         }
@@ -364,18 +396,24 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         //gets all colliders in the area
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
+                        occupiedByEnemy = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
+                            if (hits[i].CompareTag("Enemy"))
+                            {
+                                occupiedByEnemy = true;
+                            }
+
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
                             if (tile != null && tile.highlighted)
                             {
                                 validMove = true;
-                                break;
+                                
                             }
                         }
 
-                        if (validMove)
+                        if (validMove && !occupiedByEnemy)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.up));
                         }
@@ -388,18 +426,24 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         //gets all colliders in the area
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
+                        occupiedByEnemy = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
+                            if (hits[i].CompareTag("Enemy"))
+                            {
+                                occupiedByEnemy = true;
+                            }
+
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
                             if (tile != null && tile.highlighted)
                             {
                                 validMove = true;
-                                break;
+                                
                             }
                         }
 
-                        if (validMove)
+                        if (validMove && !occupiedByEnemy)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.down));
                         }
@@ -472,12 +516,13 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         movementRadius.SetActive(false);
                         PlayerUIButtons.buttonPressed = false;
                     }
-                    else if (PlayerUIButtons.abilitiesButtonPressed)
+                    if (PlayerUIButtons.abilitiesButtonPressed)
                     {
                         abilityHolder.SetActive(false);
                         PlayerUIButtons.buttonPressed = false;
+                        moveButton.Select();
                     }
-                    else if (PlayerUIButtons.inventoryButtonPressed)
+                    if (PlayerUIButtons.inventoryButtonPressed)
                     {
 
                     }
@@ -498,17 +543,21 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     {
                         selectedCharacter.transform.position = startPos;
                         movementRadius.SetActive(false);
+                        PlayerUIButtons.moveButtonPressed = false;
                         PlayerUIButtons.buttonPressed = false;
                     }
-                    else if (PlayerUIButtons.abilitiesButtonPressed)
+                    if (PlayerUIButtons.abilitiesButtonPressed)
                     {
                         abilityHolder.SetActive(false);
+                        PlayerUIButtons.abilitiesButtonPressed = false;
                         PlayerUIButtons.buttonPressed = false;
+                        moveButton.Select();
     
                     }
-                    else if (PlayerUIButtons.inventoryButtonPressed)
+                    if (PlayerUIButtons.inventoryButtonPressed)
                     {
-
+                        PlayerUIButtons.inventoryButtonPressed = false;
+                        PlayerUIButtons.buttonPressed = false;
                     }
 
 
