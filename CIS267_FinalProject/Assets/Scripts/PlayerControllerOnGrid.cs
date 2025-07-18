@@ -7,6 +7,39 @@ using UnityEngine.UI;
 
 public class PlayerControllerOnGrid : MonoBehaviour
 {
+    //==========================================================
+    // NOTICE: here is controls for player ON GRID
+    //==========================================================
+    // KEYBOARD:
+    // When on combat grid and MOVE is selected, use W and S to scroll between buttons and ENTER to select.
+    // When MOVE is selected, hold left shift and use W, A, S, D to control player.
+    // When you want to finialize your selection of a certain tile when MOVE is pressed, press Q key.
+    // When you want to back out of MOVE, press E key.
+    // When you select ABILITIES and you want out of the abilities selection, press E key.
+    // When you want to scroll through ABILITIES buttons, press W, A, S, D and hit ENTER to select.
+    // To move using BURROW in ABILITIES, move around on grid using W, A, S, D (no left shift needed).
+    // When you want to finalize your selection of a certain tile when BURROW is pressed, press Q key.
+    // When you want to back out of BURROW, press E key.
+    // To use every attack ability in ABILITIES, press Q to finalize attack and deal damage if enemy is in range,
+    // and if you want to back out of attacking press E.
+    // NOTE: attack will not do anything if enemy is not in range!!!!
+    //
+    // CONTROLLER:
+    // When on combat grid and MOVE is selected, use joystick to scroll between buttons and press A button to select.
+    // When MOVE is selected, hold down A button and use joystick to control player.
+    // When you want to finialize your selection of a certain tile when MOVE is pressed, press X button.
+    // When you want to back out of MOVE, press B button.
+    // When you select ABILITIES and you want out of the abilities selection, press B button.
+    // When you want to scroll through ABILITIES buttons, use joystick to scroll between buttons and press A button to select.
+    // To move using BURROW in ABILITIES, move around on grid using joystick (no holding A button needed).
+    // When you want to finalize your selection of a certain tile when BURROW is pressed, press X button.
+    // When you want to back out of BURROW, press B button.
+    // To use every attack ability in ABILITIES, press X to finalize attack and deal damage if enemy is in range,
+    // and if you want to back out of attacking press B.
+    // NOTE: attack will not do anything if enemy is not in range!!!!
+
+
+
     private float inputVertical;
     private float inputHorizontal;
     public static bool playerTurn;
@@ -310,7 +343,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
                     PlayerUIButtons.buttonPressed = false;
-
+                    PlayerUIButtons.moveButtonPressed = false;
                 }
 
             }
@@ -496,6 +529,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
                     PlayerUIButtons.buttonPressed = false;
+                    PlayerUIButtons.moveButtonPressed = false;
                 }
             }
             
@@ -512,14 +546,17 @@ public class PlayerControllerOnGrid : MonoBehaviour
 
                     if (PlayerUIButtons.moveButtonPressed)
                     {
+                        Debug.Log("player moved");
                         selectedCharacter.transform.position = startPos;
                         movementRadius.SetActive(false);
                         PlayerUIButtons.buttonPressed = false;
+                        PlayerUIButtons.moveButtonPressed = false;
                     }
                     if (PlayerUIButtons.abilitiesButtonPressed)
                     {
                         abilityHolder.SetActive(false);
                         PlayerUIButtons.buttonPressed = false;
+                        PlayerUIButtons.abilitiesButtonPressed = false;
                         moveButton.Select();
                     }
                     if (PlayerUIButtons.inventoryButtonPressed)
@@ -556,6 +593,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     }
                     if (PlayerUIButtons.inventoryButtonPressed)
                     {
+
                         PlayerUIButtons.inventoryButtonPressed = false;
                         PlayerUIButtons.buttonPressed = false;
                     }

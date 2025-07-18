@@ -62,6 +62,34 @@ public class PlayerUIButtons : MonoBehaviour
 
     public void InventoryButton()
     {
+        //for backing out of inventory button code, go to PlayerControllerOnGrid
+        //and scroll to
+        //if (PlayerUIButtons.moveButtonPressed)
+        //{
+        //    selectedCharacter.transform.position = startPos;
+        //    movementRadius.SetActive(false);
+        //    PlayerUIButtons.moveButtonPressed = false;
+        //    PlayerUIButtons.buttonPressed = false;
+        //}
+        //if (PlayerUIButtons.abilitiesButtonPressed)
+        //{
+        //    abilityHolder.SetActive(false);
+        //    PlayerUIButtons.abilitiesButtonPressed = false;
+        //    PlayerUIButtons.buttonPressed = false;
+        //    moveButton.Select();
+
+        //}
+
+        //================================================
+        //INSERT EXIT CODE FOR INVENTORY DOWN BELOW
+        //if (PlayerUIButtons.inventoryButtonPressed)
+        //{
+
+        //    PlayerUIButtons.inventoryButtonPressed = false;
+        //    PlayerUIButtons.buttonPressed = false;
+        //}
+
+
         for (int i = 0; i < InventorySlots.Length; i++)
         {
             if(InventoryManager.GetItem(i) != null)

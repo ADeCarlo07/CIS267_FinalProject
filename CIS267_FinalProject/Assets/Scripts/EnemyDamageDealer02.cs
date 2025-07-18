@@ -15,11 +15,12 @@ public class EnemyDamageDealer02 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //for enemies that move left to right on grid, since movement is simple their
+        //attacks deal extra damage
         if (!damageDealt && attackRadius.GetComponent<AttackRadius>().playerInRadius && EnemyMovementLeftRight.enemyTurn)
         {
             Debug.Log("Damage Taken");
-            player.GetComponent<HealthBarManager>().TakeDamage(25);
+            player.GetComponent<HealthBarManager>().TakeDamage(40);
             damageDealt = true;
 
             EnemyMovementLeftRight.enemyTurn = false;

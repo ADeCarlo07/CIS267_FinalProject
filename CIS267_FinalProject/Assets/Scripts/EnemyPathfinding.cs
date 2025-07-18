@@ -54,7 +54,6 @@ public class EnemyPathfinding : MonoBehaviour
         {
             HighlightBox highlight = highlightedBox.GetComponent<HighlightBox>();
 
-            //isChildOf is going to come into play if there is multiple enemies on the grid :)
             if (highlight != null && highlight.highlighted)
             {
                 float distance = Vector3.Distance(highlightedBox.transform.position, playerPos);
@@ -131,7 +130,6 @@ public class EnemyPathfinding : MonoBehaviour
             StartCoroutine(MoveEnemy(retreatTile.transform.position));
             enemyTurn = false;
             PlayerControllerOnGrid.playerTurn = true;
-            PlayerControllerOnGrid.ableToMove = true;
         }
 
         else if (!RangeFromPlayer.playerTooClose && closestPos != null)
@@ -140,7 +138,6 @@ public class EnemyPathfinding : MonoBehaviour
             StartCoroutine(MoveEnemy(closestPos.transform.position));
             enemyTurn = false;
             PlayerControllerOnGrid.playerTurn = true;
-            PlayerControllerOnGrid.ableToMove = true;
         }
 
       

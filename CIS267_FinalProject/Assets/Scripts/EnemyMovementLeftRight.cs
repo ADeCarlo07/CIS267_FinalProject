@@ -37,6 +37,7 @@ public class EnemyMovementLeftRight : MonoBehaviour
     {
         Vector3 direction;
 
+        //starting off, if you're moving left then direction is left, vice versa
         if (movingLeft)
         {
             direction = Vector3.left;
@@ -46,11 +47,16 @@ public class EnemyMovementLeftRight : MonoBehaviour
             direction = Vector3.right;
         }
 
+
+        //you want the enemy to move in the direction (being left or right) * the tile size so
+        //its a nice blocky movement on the grid
         Vector3 tarPos = transform.position + (direction * tileSize);
 
         occupiedByPlayer = false;
         validMove = false;
 
+        //you're storing att the hits in the target direction (where the enemy
+        //wants to go) and seeing if it 1. is occupied by player, 2. valid move
         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
         foreach (Collider2D hit in hits)
@@ -60,7 +66,12 @@ public class EnemyMovementLeftRight : MonoBehaviour
                 occupiedByPlayer = true;
             }
 
+            //Enemy highlighted box is yellow. Enemy can't move
+            //outside of highlighted box
             HighlightBox tile = hit.GetComponent<HighlightBox>();
+
+            //if there is a tile (not outside of grid) and its highlighted
+            //move is valid
             if (tile != null && tile.highlighted)
             {
                 validMove = true;
@@ -73,7 +84,9 @@ public class EnemyMovementLeftRight : MonoBehaviour
         }
         else
         {
-            //set it to the opposite of what it is
+            //set it to the opposite of what it is, same stuff but reverse direction
+            //I don't remember why exactly I did this, but it was the only
+            //thing that would work for me :(
             movingLeft = !movingLeft;
 
             Vector3 reverseDir;
@@ -113,9 +126,11 @@ public class EnemyMovementLeftRight : MonoBehaviour
             }
         }
 
+        //after enemy has moved it's not their turn anymore and
+        //player can do turn
+
         enemyTurn = false;
         PlayerControllerOnGrid.playerTurn = true;
-        PlayerControllerOnGrid.ableToMove = true;
 
     }
 

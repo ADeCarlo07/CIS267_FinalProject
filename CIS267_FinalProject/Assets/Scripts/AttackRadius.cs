@@ -3,7 +3,7 @@ using UnityEngine;
 public class AttackRadius : MonoBehaviour
 {
     public bool playerInRadius;
-
+    public bool enemyInRadius;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +25,11 @@ public class AttackRadius : MonoBehaviour
 
             
         }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            enemyInRadius = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -33,6 +38,11 @@ public class AttackRadius : MonoBehaviour
         {
             Debug.Log("Player out of radius");
             playerInRadius = false;
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            enemyInRadius = false;
         }
     }
 }

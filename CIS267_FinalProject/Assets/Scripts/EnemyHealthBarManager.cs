@@ -5,7 +5,7 @@ public class EnemyHealthBarManager : MonoBehaviour
 {
     public Image healthBar;
     public int maxHealth = 100;
-    private int curHealth;
+    public int curHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,4 +35,7 @@ public class EnemyHealthBarManager : MonoBehaviour
         curHealth = Mathf.Clamp(curHealth, 0, maxHealth);
         UpdateHealthBar();
     }
+
+  
+
 }

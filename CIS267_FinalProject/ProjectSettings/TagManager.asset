@@ -16,6 +16,7 @@ TagManager:
   - PlayerAttackRadius
   - Enemy
   - GridBorder
+  - EnemyCombatSymbol
   layers:
   - Default
   - TransparentFX

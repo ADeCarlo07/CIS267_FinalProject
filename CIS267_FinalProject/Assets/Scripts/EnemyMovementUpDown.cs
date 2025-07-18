@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class EnemyMovementUpDown : MonoBehaviour
 {
+    //for short explanation on code go to EnemyMovementLeftRight script, these two are
+    //basically the same just different directions
+
     private Vector3 origPos;
     private Vector3 targetPos;
     public float tileSize = 1.4f;

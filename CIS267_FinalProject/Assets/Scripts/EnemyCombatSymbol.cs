@@ -22,7 +22,7 @@ public class EnemyCombatSymbol : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyAttackRadius"))
         {
             createdHighlightBox = Instantiate(highlightedBox, transform.position, Quaternion.identity);
-            createdHighlightBox.GetComponent<HighlightBox>().highlighted = true;
+            createdHighlightBox.GetComponent<CombatSymbol>().highlighted = true;
 
         }
 
@@ -35,7 +35,7 @@ public class EnemyCombatSymbol : MonoBehaviour
 
             if (createdHighlightBox != null)
             {
-                createdHighlightBox.GetComponent<HighlightBox>().highlighted = false;
+                createdHighlightBox.GetComponent<CombatSymbol>().highlighted = false;
             }
         }
 
