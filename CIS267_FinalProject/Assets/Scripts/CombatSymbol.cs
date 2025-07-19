@@ -15,6 +15,7 @@ public class CombatSymbol : MonoBehaviour
     }
     void Update()
     {
+
         if (!highlighted)
         {
             timeUnhighlighted += Time.deltaTime;
@@ -40,29 +41,30 @@ public class CombatSymbol : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            PlayerControllerOnGrid.validMove = false;
             Destroy(gameObject);
-            //highlighted = false;
+            
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerControllerOnGrid.inMovementBounds = true;
 
 
-            highlighted = false;
-        }
     }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        PlayerControllerOnGrid.inMovementBounds = true;
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerControllerOnGrid.inMovementBounds = false;
-        }
-    }
+
+    //        highlighted = false;
+    //    }
+    //}
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        PlayerControllerOnGrid.inMovementBounds = false;
+    //    }
+    //}
 }
 
 

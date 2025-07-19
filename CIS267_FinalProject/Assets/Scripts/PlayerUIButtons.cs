@@ -18,6 +18,24 @@ public class PlayerUIButtons : MonoBehaviour
     public GameObject abilityHolder;
     public GameObject inventoryHolder;
     public GameObject firstAbility;
+    public Button burrow;
+    public Button sporeCloud;
+    public Button slice;
+    public Button detonate;
+    public Button lazerBeam;
+    public Button shutDown;
+    public Button seedShot;
+    public Button lifeLeech;
+
+    public string burrowID = "Burrow";
+    public string sporeCloudID = "Spore Cloud";
+    public string sliceID = "Slice";
+    public string detonateID = "Detonate";
+    public string lazerBeamID = "Lazer Beam";
+    public string shutDownID = "Shut Down";
+    public string seedShotID = "Seed Shot";
+    public string lifeLeechID = "Life Leech";
+
 
     public TextMeshProUGUI[] InventorySlots = new TextMeshProUGUI[3];
 
@@ -52,10 +70,187 @@ public class PlayerUIButtons : MonoBehaviour
 
     public void AbilitiesButton()
     {
-        
+        if (!GameManager.instance.burrowFound)
+        {
+            burrow.gameObject.SetActive(false);
+        }
+        else
+        {
+            burrow.gameObject.SetActive(true);
+
+            if (GameManager.instance.PlantAbility() == burrowID)
+            {
+                var selectedOutline = burrow.transform.Find("Outline");
+
+                if (selectedOutline != null)
+                {
+                    selectedOutline.gameObject.SetActive(true);
+                }
+            }
+        }
+        if (!GameManager.instance.sporeCloudFound)
+        {
+            sporeCloud.gameObject.SetActive(false);
+        }
+        else
+        {
+            sporeCloud.gameObject.SetActive(true);
+            if (GameManager.instance.PlantAbility() == sporeCloudID)
+            {
+                var selectedOutline = sporeCloud.transform.Find("Outline");
+
+                if (selectedOutline != null)
+                {
+                    selectedOutline.gameObject.SetActive(true);
+                }
+            }
+
+        }
+        if (!GameManager.instance.sliceFound)
+        {
+            slice.gameObject.SetActive(false);
+        }
+        else
+        {
+            slice.gameObject.SetActive(true);
+
+            if (GameManager.instance.RobotAbility() == sliceID)
+            {
+                var selectedOutline = slice.transform.Find("Outline");
+
+                if (selectedOutline != null)
+                {
+                    selectedOutline.gameObject.SetActive(true);
+                }
+            }
+        }
+        if (!GameManager.instance.detonateFound)
+        {
+            detonate.gameObject.SetActive(false);
+        }
+        else
+        {
+            detonate.gameObject.SetActive(true);
+
+            if (GameManager.instance.RobotAbility() == detonateID)
+            {
+                var selectedOutline = detonate.transform.Find("Outline");
+
+                if (selectedOutline != null)
+                {
+                    selectedOutline.gameObject.SetActive(true);
+                }
+            }
+        }
+        if (!GameManager.instance.lazerBeamFound)
+        {
+            lazerBeam.gameObject.SetActive(false);
+        }
+        else
+        {
+            lazerBeam.gameObject.SetActive(true);
+
+            if (GameManager.instance.RobotAbility() == lazerBeamID)
+            {
+                var selectedOutline = lazerBeam.transform.Find("Outline");
+
+                if (selectedOutline != null)
+                {
+                    selectedOutline.gameObject.SetActive(true);
+                }
+            }
+        }
+        if (!GameManager.instance.shutDownFound)
+        {
+            shutDown.gameObject.SetActive(false);
+        }
+        else
+        {
+            shutDown.gameObject.SetActive(true);
+
+            if (GameManager.instance.RobotAbility() == shutDownID)
+            {
+                var selectedOutline = shutDown.transform.Find("Outline");
+
+                if (selectedOutline != null)
+                {
+                    selectedOutline.gameObject.SetActive(true);
+                }
+            }
+        }
+        if (!GameManager.instance.seedShotFound)
+        {
+            seedShot.gameObject.SetActive(false);
+        }
+        else
+        {
+            seedShot.gameObject.SetActive(true);
+
+            if (GameManager.instance.PlantAbility() == seedShotID)
+            {
+                var selectedOutline = seedShot.transform.Find("Outline");
+
+                if (selectedOutline != null)
+                {
+                    selectedOutline.gameObject.SetActive(true);
+                }
+            }
+        }
+        if (!GameManager.instance.lifeLeechFound)
+        {
+            lifeLeech.gameObject.SetActive(false);
+        }
+        else
+        {
+            lifeLeech.gameObject.SetActive(true);
+
+            if (GameManager.instance.PlantAbility() == lifeLeechID)
+            {
+                var selectedOutline = lifeLeech.transform.Find("Outline");
+
+                if (selectedOutline != null)
+                {
+                    selectedOutline.gameObject.SetActive(true);
+                }
+            }
+        }
+
         abilityHolder.SetActive(true);
         abilitiesButtonPressed = true;
-        EventSystem.current.SetSelectedGameObject(firstAbility);
+        
+        if (GameManager.instance.burrowFound)
+        {
+            burrow.Select();
+        }
+        else if (GameManager.instance.sliceFound)
+        {
+            slice.Select();
+        }
+        else if (GameManager.instance.sporeCloudFound)
+        {
+            sporeCloud.Select();
+        }
+        else if (GameManager.instance.lazerBeamFound)
+        {
+            lazerBeam.Select();
+        }
+        else if (GameManager.instance.lifeLeechFound)
+        {
+            lifeLeech.Select();
+        }
+        else if (GameManager.instance.detonateFound)
+        {
+            detonate.Select();
+        }
+        else if (GameManager.instance.seedShotFound)
+        {
+            seedShot.Select();
+        }
+        else if (GameManager.instance.shutDownFound)
+        {
+            shutDown.Select();
+        }
+        
         buttonPressed = true;
         
     }

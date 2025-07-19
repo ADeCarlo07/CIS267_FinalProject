@@ -49,6 +49,16 @@ public class AbilitiesButtons : MonoBehaviour
     private int timesDone05;
     private int timesDone06;
 
+    public string burrowID = "Burrow";
+    public string sporeCloudID = "Spore Cloud";
+    public string sliceID = "Slice";
+    public string detonateID = "Detonate";
+    public string lazerBeamID = "Lazer Beam";
+    public string shutDownID = "Shut Down";
+    public string seedShotID = "Seed Shot";
+    public string lifeLeechID = "Life Leech";
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -764,17 +774,21 @@ public class AbilitiesButtons : MonoBehaviour
 
     public void BurrowButton()
     {
-        if (!burrowOneTimeUse)
+        if (GameManager.instance.PlantAbility() == burrowID)
         {
-            startPos = player.transform.position;
+            if (!burrowOneTimeUse)
+            {
+                startPos = player.transform.position;
 
-            dirtMound.SetActive(true);
-            PlayerUIButtons.abilitiesButtonPressed = false;
-            abilityHolder.SetActive(false);
-            PlayerControllerOnGrid.playerTurn = true;
-            burrowMoveBox.SetActive(true);
-            burrowButtonPressed = true;
+                dirtMound.SetActive(true);
+                PlayerUIButtons.abilitiesButtonPressed = false;
+                abilityHolder.SetActive(false);
+                PlayerControllerOnGrid.playerTurn = true;
+                burrowMoveBox.SetActive(true);
+                burrowButtonPressed = true;
+            }
         }
+        
         
        
 
@@ -782,160 +796,188 @@ public class AbilitiesButtons : MonoBehaviour
 
     public void SporeCloudButton()
     {
-        timesDone++;
-        PlayerUIButtons.abilitiesButtonPressed = false;
-        abilityHolder.SetActive(false);
-        PlayerControllerOnGrid.playerTurn = true;
-
-        sporeCloudAttackRad.SetActive(true);
-
-        //I made this because the attack symbols would only appear if the radius
-        //was moved for some reason, so every even/odd turn would have
-        //a different movement done to the radius so the symbols would appear.
-        //I seriously don't know why this is happening, if it works it works
-        if (timesDone % 2 == 0)
+        if (GameManager.instance.PlantAbility() == sporeCloudID)
         {
-            sporeCloudAttackRad.transform.position = playerMovePoint.position;
+            timesDone++;
+            PlayerUIButtons.abilitiesButtonPressed = false;
+            abilityHolder.SetActive(false);
+            PlayerControllerOnGrid.playerTurn = true;
+
+            sporeCloudAttackRad.SetActive(true);
+
+            //I made this because the attack symbols would only appear if the radius
+            //was moved for some reason, so every even/odd turn would have
+            //a different movement done to the radius so the symbols would appear.
+            //I seriously don't know why this is happening, if it works it works
+            if (timesDone % 2 == 0)
+            {
+                sporeCloudAttackRad.transform.position = playerMovePoint.position;
+            }
+            else
+            {
+                sporeCloudAttackRad.transform.position = otherMovePoint.position;
+            }
+
+            sporeCloudButtonPressed = true;
         }
-        else
-        {
-            sporeCloudAttackRad.transform.position = otherMovePoint.position;
-        }
-            
-        sporeCloudButtonPressed = true;
+        
     }
 
     public void LifeLeechButton()
     {
-        timesDone06++;
-        PlayerUIButtons.abilitiesButtonPressed = false;
-        abilityHolder.SetActive(false);
-        PlayerControllerOnGrid.playerTurn = true;
-
-        lifeLeechAttackRad.SetActive(true);
-        if (timesDone06 % 2 == 0)
+        if (GameManager.instance.PlantAbility() == lifeLeechID)
         {
+            timesDone06++;
+            PlayerUIButtons.abilitiesButtonPressed = false;
+            abilityHolder.SetActive(false);
+            PlayerControllerOnGrid.playerTurn = true;
 
-            lifeLeechAttackRad.transform.position = playerMovePoint.position;
+            lifeLeechAttackRad.SetActive(true);
+            if (timesDone06 % 2 == 0)
+            {
+
+                lifeLeechAttackRad.transform.position = playerMovePoint.position;
+            }
+            else
+            {
+                lifeLeechAttackRad.transform.position = otherMovePoint.position;
+            }
+
+            lifeLeechButtonPressed = true;
         }
-        else
-        {
-            lifeLeechAttackRad.transform.position = otherMovePoint.position;
-        }
-        
-        lifeLeechButtonPressed = true;
+       
     }
 
     public void SeedShotButton()
     {
-        timesDone02++;
-
-        PlayerUIButtons.abilitiesButtonPressed = false;
-        abilityHolder.SetActive(false);
-        PlayerControllerOnGrid.playerTurn = true;
-
-        seedShotAttackRad.SetActive(true);
-
-        if (timesDone02 % 2 == 0)
+        if (GameManager.instance.PlantAbility() == seedShotID)
         {
-            seedShotAttackRad.transform.position = playerMovePoint.position;
-        }
-        else
-        {
-            seedShotAttackRad.transform.position = otherMovePoint.position;
-        }
-
-        seedShotButtonPressed = true;
-    }
-
-    public void SliceButton()
-    {
-        timesDone03++;
-
-        PlayerUIButtons.abilitiesButtonPressed = false;
-        abilityHolder.SetActive(false);
-        PlayerControllerOnGrid.playerTurn = true;
-
-        sliceAttackRad.SetActive(true);
-
-        if (timesDone03 % 2 == 0)
-        {
-            sliceAttackRad.transform.position = playerMovePoint.position;
-        }
-        else
-        {
-            sliceAttackRad.transform.position = otherMovePoint.position;
-        }
-
-        sliceButtonPressed = true;
-    }
-
-    public void LazerBeamButton()
-    {
-        timesDone04++;
-
-        PlayerUIButtons.abilitiesButtonPressed = false;
-        abilityHolder.SetActive(false);
-        PlayerControllerOnGrid.playerTurn = true;
-
-        lazerBeamAttackRad.SetActive(true);
-
-        if (timesDone04 % 2 == 0)
-        {
-            lazerBeamAttackRad.transform.position = playerMovePoint.position;
-        }
-        else
-        {
-            lazerBeamAttackRad.transform.position = otherMovePoint.position;
-        }
-
-       lazerBeamButtonPressed = true;
-    }
-
-    public void DetonateButton()
-    {
-        timesDone05++;
-
-        PlayerUIButtons.abilitiesButtonPressed = false;
-        abilityHolder.SetActive(false);
-        PlayerControllerOnGrid.playerTurn = true;
-
-        detonateAttackRad.SetActive(true);
-
-        if (timesDone05 % 2 == 0)
-        {
-            detonateAttackRad.transform.position = playerMovePoint.position;
-        }
-        else
-        {
-            detonateAttackRad.transform.position = otherMovePoint.position;
-        }
-
-       detonateButtonPressed = true;
-    }
-
-    public void ShutDownButton()
-    {
-        if (GameManager.instance.CanUseShutDown())
-        {
-            GameManager.instance.UseShutDown();
+            timesDone02++;
 
             PlayerUIButtons.abilitiesButtonPressed = false;
             abilityHolder.SetActive(false);
             PlayerControllerOnGrid.playerTurn = true;
 
-            enemy.GetComponent<EnemyHealthBarManager>().TakeDamage(enemy.GetComponent<EnemyHealthBarManager>().maxHealth);
+            seedShotAttackRad.SetActive(true);
 
-            PlayerControllerOnGrid.playerTurn = false;
-            EnemyPathfinding.enemyTurn = true;
-            EnemyMovementLeftRight.enemyTurn = true;
-            EnemyMovementUpDown.enemyTurn = true;
+            if (timesDone02 % 2 == 0)
+            {
+                seedShotAttackRad.transform.position = playerMovePoint.position;
+            }
+            else
+            {
+                seedShotAttackRad.transform.position = otherMovePoint.position;
+            }
 
-            PlayerUIButtons.buttonPressed = false;
-            PlayerUIButtons.abilitiesButtonPressed = false;
-            move.Select();
-
+            seedShotButtonPressed = true;
         }
+       
+    }
+
+    public void SliceButton()
+    {
+        if (GameManager.instance.RobotAbility() == sliceID)
+        {
+            timesDone03++;
+
+            PlayerUIButtons.abilitiesButtonPressed = false;
+            abilityHolder.SetActive(false);
+            PlayerControllerOnGrid.playerTurn = true;
+
+            sliceAttackRad.SetActive(true);
+
+            if (timesDone03 % 2 == 0)
+            {
+                sliceAttackRad.transform.position = playerMovePoint.position;
+            }
+            else
+            {
+                sliceAttackRad.transform.position = otherMovePoint.position;
+            }
+
+            sliceButtonPressed = true;
+        }
+        
+    }
+
+    public void LazerBeamButton()
+    {
+        if (GameManager.instance.RobotAbility() == lazerBeamID)
+        {
+            timesDone04++;
+
+            PlayerUIButtons.abilitiesButtonPressed = false;
+            abilityHolder.SetActive(false);
+            PlayerControllerOnGrid.playerTurn = true;
+
+            lazerBeamAttackRad.SetActive(true);
+
+            if (timesDone04 % 2 == 0)
+            {
+                lazerBeamAttackRad.transform.position = playerMovePoint.position;
+            }
+            else
+            {
+                lazerBeamAttackRad.transform.position = otherMovePoint.position;
+            }
+
+            lazerBeamButtonPressed = true;
+        }
+        
+    }
+
+    public void DetonateButton()
+    {
+        if (GameManager.instance.RobotAbility() == detonateID)
+        {
+            timesDone05++;
+
+            PlayerUIButtons.abilitiesButtonPressed = false;
+            abilityHolder.SetActive(false);
+            PlayerControllerOnGrid.playerTurn = true;
+
+            detonateAttackRad.SetActive(true);
+
+            if (timesDone05 % 2 == 0)
+            {
+                detonateAttackRad.transform.position = playerMovePoint.position;
+            }
+            else
+            {
+                detonateAttackRad.transform.position = otherMovePoint.position;
+            }
+
+            detonateButtonPressed = true;
+        }
+       
+    }
+
+    public void ShutDownButton()
+    {
+        if (GameManager.instance.RobotAbility() == shutDownID)
+        {
+            if (GameManager.instance.CanUseShutDown())
+            {
+                GameManager.instance.UseShutDown();
+
+                PlayerUIButtons.abilitiesButtonPressed = false;
+                abilityHolder.SetActive(false);
+                PlayerControllerOnGrid.playerTurn = true;
+
+                enemy.GetComponent<EnemyHealthBarManager>().TakeDamage(enemy.GetComponent<EnemyHealthBarManager>().maxHealth);
+
+                PlayerControllerOnGrid.playerTurn = false;
+                EnemyPathfinding.enemyTurn = true;
+                EnemyMovementLeftRight.enemyTurn = true;
+                EnemyMovementUpDown.enemyTurn = true;
+
+                PlayerUIButtons.buttonPressed = false;
+                PlayerUIButtons.abilitiesButtonPressed = false;
+                move.Select();
+
+            }
+        }
+        
     }
 
     private IEnumerator BurrowMove(Vector3 direction)

@@ -17,6 +17,12 @@ TagManager:
   - Enemy
   - GridBorder
   - EnemyCombatSymbol
+  - SlicePickUp
+  - ShutDownPickUp
+  - Level01_Enemy01
+  - Level01_Enemy02
+  - Level01_Enemy03
+  - Outline
   layers:
   - Default
   - TransparentFX
@@ -24,7 +30,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Obstacle
   - 
   - 
   - 

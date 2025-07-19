@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class OverworldEnemy : MonoBehaviour
 {
     public string enemyID;
-    public GameObject player;
+    private int digit;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,7 +12,14 @@ public class OverworldEnemy : MonoBehaviour
         {
             gameObject.SetActive(false);
 
-
+            digit = Random.Range(0, 101);
+            
+            if (digit <= 25)
+            {
+                Debug.Log("health potion drop");
+                // health potion
+            }
+  
         }
     }
 
@@ -22,9 +29,5 @@ public class OverworldEnemy : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        GameManager.instance.SavePlayerPos(player.transform.position);
-        SceneManager.LoadScene("Level01_CombatGrid01");
-    }
+
 }

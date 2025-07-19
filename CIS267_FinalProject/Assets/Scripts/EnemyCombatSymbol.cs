@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyCombatSymbol : MonoBehaviour
@@ -40,4 +41,6 @@ public class EnemyCombatSymbol : MonoBehaviour
         }
 
     }
+
+
 }

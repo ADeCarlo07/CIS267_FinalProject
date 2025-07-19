@@ -15,8 +15,6 @@ public class EnemyDamageDealer03 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("damage dealt: " + damageDealt);
-
         if (!damageDealt && attackRadius.GetComponent<AttackRadius>().playerInRadius && EnemyPathfinding.enemyTurn)
         {
             Debug.Log("Damage Taken");

@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,17 @@ public class GameManager : MonoBehaviour
     public bool shutDownUsed = false;
     public Vector3 lastPlayerPos;
     private bool hasSavedPlayerPos = false;
+    public bool shutDownFound = false;
+    public bool sporeCloudFound = false;
+    public bool burrowFound = false;
+    public bool lifeLeechFound = false;
+    public bool seedShotFound = false;
+    public bool lazerBeamFound = false;
+    public bool detonateFound = false;
+    public bool sliceFound = false;
+    public string selectedPlantAbilityID;
+    public string selectedRobotAbilityID;
+
 
     //ENEMY TRACKING
 
@@ -47,9 +59,60 @@ public class GameManager : MonoBehaviour
         return !shutDownUsed;
     }
 
+    public string PlantAbility()
+    {
+        return selectedPlantAbilityID;
+    }
+
+    public string RobotAbility()
+    {
+        return selectedRobotAbilityID;
+    }
+
     public void UseShutDown()
     {
         shutDownUsed = true;
+        shutDownFound = false;
+    }
+
+    public void FindShutDown()
+    {
+        shutDownFound = true;
+    }
+
+    public void FindSporeCloud()
+    {
+        sporeCloudFound = true;
+    }
+
+    public void FindSlice()
+    {
+        sliceFound = true;
+    }
+
+    public void FindLazerBeam()
+    {
+        lazerBeamFound = true;
+    }
+
+    public void FindBurrow()
+    {
+        burrowFound = true;
+    }
+
+    public void FindLifeLeech()
+    {
+        lifeLeechFound = true;
+    }
+
+    public void FindSeedShot()
+    {
+        seedShotFound = true;
+    }
+
+    public void FindDetonate()
+    {
+        detonateFound = true;
     }
 
     public void EnemyDefeated(string enemyID)
