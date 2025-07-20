@@ -1,5 +1,6 @@
 using TMPro;
-using UnityEditor.Build.Content;
+//commenting this out for now to be able to make the build
+//using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
