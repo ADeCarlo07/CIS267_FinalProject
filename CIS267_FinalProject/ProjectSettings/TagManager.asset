@@ -23,6 +23,7 @@ TagManager:
   - Level01_Enemy02
   - Level01_Enemy03
   - Outline
+  - SeedShotPickUp
   layers:
   - Default
   - TransparentFX

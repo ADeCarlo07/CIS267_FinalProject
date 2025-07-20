@@ -120,6 +120,11 @@ public class GameManager : MonoBehaviour
         defeatedEnemies.Add(enemyID);
     }
 
+    public void RemoveDefeatedEnemy(string enemyID)
+    {
+        defeatedEnemies.Remove(enemyID);
+    }
+
     public bool IsEnemyDefeated(string enemyID)
     {
         return defeatedEnemies.Contains(enemyID);

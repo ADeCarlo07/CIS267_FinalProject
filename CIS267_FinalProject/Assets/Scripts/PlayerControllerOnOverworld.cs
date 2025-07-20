@@ -53,6 +53,12 @@ public class PlayerControllerOnOverworld : MonoBehaviour
             GameManager.instance.FindShutDown();
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("SeedShotPickUp"))
+        {
+            GameManager.instance.FindSeedShot();
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
