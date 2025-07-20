@@ -67,6 +67,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
     public Button moveButton;
     public GameObject abilityHolder;
     private bool occupiedByEnemy;
+    public GameObject inventoryHolder;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -561,7 +562,10 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     }
                     if (PlayerUIButtons.inventoryButtonPressed)
                     {
-
+                        inventoryHolder.SetActive(false);
+                        PlayerUIButtons.inventoryButtonPressed = false;
+                        PlayerUIButtons.buttonPressed = false;
+                        moveButton.Select();
                     }
                     
 
@@ -594,8 +598,10 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     if (PlayerUIButtons.inventoryButtonPressed)
                     {
 
+                        inventoryHolder.SetActive(false);
                         PlayerUIButtons.inventoryButtonPressed = false;
                         PlayerUIButtons.buttonPressed = false;
+                        moveButton.Select();
                     }
 
 

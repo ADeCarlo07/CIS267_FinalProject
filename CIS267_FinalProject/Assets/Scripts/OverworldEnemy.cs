@@ -17,6 +17,7 @@ public class OverworldEnemy : MonoBehaviour
             if (digit <= 25)
             {
                 Debug.Log("health potion drop");
+
                 // health potion
             }
   

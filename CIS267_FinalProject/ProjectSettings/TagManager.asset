@@ -24,6 +24,12 @@ TagManager:
   - Level01_Enemy03
   - Outline
   - SeedShotPickUp
+  - Level02_Enemy02
+  - Level02_Enemy01
+  - Level02_Enemy03
+  - Level03_Enemy03
+  - Level03_Enemy02
+  - Level03_Enemy01
   layers:
   - Default
   - TransparentFX

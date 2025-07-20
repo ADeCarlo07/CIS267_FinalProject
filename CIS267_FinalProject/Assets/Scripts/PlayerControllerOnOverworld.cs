@@ -63,58 +63,71 @@ public class PlayerControllerOnOverworld : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Level01_Enemy01"))
+        if (SceneManager.GetActiveScene().name == "Level01")
         {
-            GameManager.instance.SavePlayerPos(transform.position);
-            SceneManager.LoadScene("Level01_CombatGrid01");
+            if (collision.gameObject.CompareTag("Level01_Enemy01"))
+            {
+                GameManager.instance.SavePlayerPos(transform.position);
+                SceneManager.LoadScene("Level01_CombatGrid01");
+            }
+
+            if (collision.gameObject.CompareTag("Level01_Enemy02"))
+            {
+                GameManager.instance.SavePlayerPos(transform.position);
+                SceneManager.LoadScene("Level01_CombatGrid02");
+            }
+
+            if (collision.gameObject.CompareTag("Level01_Enemy03"))
+            {
+                GameManager.instance.SavePlayerPos(transform.position);
+                SceneManager.LoadScene("Level01_CombatGrid03");
+            }
+
         }
 
-        if (collision.gameObject.CompareTag("Level01_Enemy02"))
+        if (SceneManager.GetActiveScene().name == "Level02")
         {
-            GameManager.instance.SavePlayerPos(transform.position);
-            SceneManager.LoadScene("Level01_CombatGrid02");
+            if (collision.gameObject.CompareTag("Level02_Enemy01"))
+            {
+                GameManager.instance.SavePlayerPos(transform.position);
+                SceneManager.LoadScene("Level02_CombatGrid01");
+            }
+
+            if (collision.gameObject.CompareTag("Level02_Enemy02"))
+            {
+                GameManager.instance.SavePlayerPos(transform.position);
+                SceneManager.LoadScene("Level02_CombatGrid02");
+            }
+
+            if (collision.gameObject.CompareTag("Level02_Enemy03"))
+            {
+                GameManager.instance.SavePlayerPos(transform.position);
+                SceneManager.LoadScene("Level02_CombatGrid03");
+            }
+
         }
 
-        if (collision.gameObject.CompareTag("Level01_Enemy03"))
+        if (SceneManager.GetActiveScene().name == "Level03")
         {
-            GameManager.instance.SavePlayerPos(transform.position);
-            SceneManager.LoadScene("Level01_CombatGrid03");
+            if (collision.gameObject.CompareTag("Level03_Enemy01"))
+            {
+                GameManager.instance.SavePlayerPos(transform.position);
+                SceneManager.LoadScene("Level03_CombatGrid01");
+            }
+
+            if (collision.gameObject.CompareTag("Level03_Enemy02"))
+            {
+                GameManager.instance.SavePlayerPos(transform.position);
+                SceneManager.LoadScene("Level03_CombatGrid02");
+            }
+
+            if (collision.gameObject.CompareTag("Level03_Enemy03"))
+            {
+                GameManager.instance.SavePlayerPos(transform.position);
+                SceneManager.LoadScene("Level03_CombatGrid03");
+            }
         }
 
-        //if (collision.gameObject.CompareTag("Level02_Enemy01"))
-        //{
-        //    GameManager.instance.SavePlayerPos(player.transform.position);
-        //    SceneManager.LoadScene("Level02_CombatGrid01");
-        //}
-
-        //if (collision.gameObject.CompareTag("Level02_Enemy02"))
-        //{
-        //    GameManager.instance.SavePlayerPos(player.transform.position);
-        //    SceneManager.LoadScene("Level02_CombatGrid02");
-        //}
-
-        //if (collision.gameObject.CompareTag("Level02_Enemy03"))
-        //{
-        //    GameManager.instance.SavePlayerPos(player.transform.position);
-        //    SceneManager.LoadScene("Level02_CombatGrid03");
-        //}
-
-        //if (collision.gameObject.CompareTag("Level03_Enemy01"))
-        //{
-        //    GameManager.instance.SavePlayerPos(player.transform.position);
-        //    SceneManager.LoadScene("Level03_CombatGrid01");
-        //}
-
-        //if (collision.gameObject.CompareTag("Level03_Enemy02"))
-        //{
-        //    GameManager.instance.SavePlayerPos(player.transform.position);
-        //    SceneManager.LoadScene("Level03_CombatGrid02");
-        //}
-
-        //if (collision.gameObject.CompareTag("Level03_Enemy03"))
-        //{
-        //    GameManager.instance.SavePlayerPos(player.transform.position);
-        //    SceneManager.LoadScene("Level03_CombatGrid03");
-        //}
+       
     }
 }
