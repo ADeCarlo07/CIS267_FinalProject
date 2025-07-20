@@ -39,6 +39,21 @@ public class PlayerUIButtons : MonoBehaviour
 
     public TextMeshProUGUI[] InventorySlots = new TextMeshProUGUI[3];
 
+    private void Start()
+    {
+        for (int i = 0; i < InventorySlots.Length; i++)
+        {
+            if (InventoryManager.GetItem(i) != null)
+            {
+                InventorySlots[i].text = InventoryManager.GetItem(i);
+            }
+            else
+            {
+                InventorySlots[i].text = "Empty Slot";
+
+            }
+        }
+    }
     void Update()
     {
         if (buttonPressed == true)
@@ -55,6 +70,11 @@ public class PlayerUIButtons : MonoBehaviour
             abilities.enabled = true;
             inventory.enabled = true;
             skipTurn.enabled = true;
+        }
+
+        for (int i = 0; InventorySlots.Length < 3; i++)
+        {
+            InventorySlots[i].text = InventoryManager.playerItems[i];
         }
     }
 

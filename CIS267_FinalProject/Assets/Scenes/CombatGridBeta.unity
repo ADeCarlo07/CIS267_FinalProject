@@ -951,7 +951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -77.20001, y: 33.9}
+  m_AnchoredPosition: {x: -77.20001, y: -30}
   m_SizeDelta: {x: 116.6275, y: 57.5673}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111820175
@@ -998,16 +998,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 911178225}
-        m_TargetAssemblyTypeName: AbilitiesButtons, Assembly-CSharp
-        m_MethodName: BurrowButton
-        m_Mode: 1
+      - m_Target: {fileID: 690151442}
+        m_TargetAssemblyTypeName: ItemUser, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: two
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &111820176
@@ -2208,7 +2208,7 @@ GameObject:
   - component: {fileID: 249867581}
   - component: {fileID: 249867580}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ItemTextSlot1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2261,8 +2261,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2369,7 +2369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -77.20001, y: 33.9}
+  m_AnchoredPosition: {x: -77.20001, y: -90}
   m_SizeDelta: {x: 116.6275, y: 57.5673}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254182925
@@ -2416,16 +2416,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 911178225}
-        m_TargetAssemblyTypeName: AbilitiesButtons, Assembly-CSharp
-        m_MethodName: BurrowButton
-        m_Mode: 1
+      - m_Target: {fileID: 690151442}
+        m_TargetAssemblyTypeName: ItemUser, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: three
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &254182926
@@ -5909,7 +5909,7 @@ GameObject:
   - component: {fileID: 624845556}
   - component: {fileID: 624845555}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ItemTextSlot3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5981,8 +5981,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6796,6 +6796,7 @@ GameObject:
   - component: {fileID: 690151438}
   - component: {fileID: 690151437}
   - component: {fileID: 690151436}
+  - component: {fileID: 690151442}
   m_Layer: 0
   m_Name: Player
   m_TagString: OtherPlayer
@@ -6990,6 +6991,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &690151442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690151434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb3a7e32f0e37e4c8a0fe09b38f9f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 690151434}
+  InventoryPanel: {fileID: 330283257}
+  button: {fileID: 777071842}
 --- !u!1 &693532838
 GameObject:
   m_ObjectHideFlags: 0
@@ -9489,6 +9505,14 @@ MonoBehaviour:
   enemy: {fileID: 371227926}
   playerMovePoint: {fileID: 481814117}
   otherMovePoint: {fileID: 2092943582}
+  burrowID: Burrow
+  sporeCloudID: Spore Cloud
+  sliceID: Slice
+  detonateID: Detonate
+  lazerBeamID: Lazer Beam
+  shutDownID: Shut Down
+  seedShotID: Seed Shot
+  lifeLeechID: Life Leech
 --- !u!114 &911178226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9517,6 +9541,14 @@ MonoBehaviour:
   shutDown: {fileID: 1557569509}
   seedShot: {fileID: 679917923}
   lifeLeech: {fileID: 1280363140}
+  burrowID: Burrow
+  sporeCloudID: Spore Cloud
+  sliceID: Slice
+  detonateID: Detonate
+  lazerBeamID: Lazer Beam
+  shutDownID: Shut Down
+  seedShotID: Seed Shot
+  lifeLeechID: Life Leech
   InventorySlots:
   - {fileID: 249867580}
   - {fileID: 1344038063}
@@ -9621,7 +9653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -77.20001, y: 33.9}
+  m_AnchoredPosition: {x: -77.20001, y: 30}
   m_SizeDelta: {x: 116.6275, y: 57.5673}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &917705300
@@ -9668,16 +9700,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 911178225}
-        m_TargetAssemblyTypeName: AbilitiesButtons, Assembly-CSharp
-        m_MethodName: BurrowButton
-        m_Mode: 1
+      - m_Target: {fileID: 690151442}
+        m_TargetAssemblyTypeName: ItemUser, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: one
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &917705301
@@ -15470,9 +15502,9 @@ Transform:
   m_GameObject: {fileID: 1319876408}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.25, y: 76, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 117, y: 45, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 917705299}
   - {fileID: 111820174}
@@ -15709,7 +15741,7 @@ GameObject:
   - component: {fileID: 1344038064}
   - component: {fileID: 1344038063}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ItemTextSlot2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15762,8 +15794,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
