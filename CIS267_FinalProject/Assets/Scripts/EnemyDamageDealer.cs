@@ -16,7 +16,7 @@ public class EnemyDamageDealer : MonoBehaviour
     void Update()
     {
         // for enemies that move up and down on grid, extra damage dealt because their movement is so simple
-        if (!damageDealt && attackRadius.GetComponent<AttackRadius>().playerInRadius && EnemyMovementUpDown.enemyTurn)
+        if (!damageDealt && attackRadius.GetComponent<AttackRadius>().playerInRadius && (EnemyMovementUpDown.enemyTurn && EnemyMovementUpDownV2.enemyTurn))
         {
             Debug.Log("Damage Taken");
             player.GetComponent<HealthBarManager>().TakeDamage(40);
@@ -24,11 +24,12 @@ public class EnemyDamageDealer : MonoBehaviour
             damageDealt = true;
 
             EnemyMovementUpDown.enemyTurn = false;
+            EnemyMovementUpDownV2.enemyTurn = false;
             PlayerControllerOnGrid.playerTurn = true;
             PlayerControllerOnGrid.ableToMove = true;
         }
 
-        if (!EnemyMovementUpDown.enemyTurn)
+        if (!EnemyMovementUpDown.enemyTurn && !EnemyMovementUpDownV2.enemyTurn)
         {
             damageDealt = false;
         }

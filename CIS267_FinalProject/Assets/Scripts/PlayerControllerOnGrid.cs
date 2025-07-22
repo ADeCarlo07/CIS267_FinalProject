@@ -198,7 +198,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                            if (tile != null && tile.highlighted)
+                            if (tile != null && tile.highlighted && !tile.CompareTag("EnemyHighlightedBox"))
                             {
                                 validMove = true;
                                 
@@ -229,7 +229,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                            if (tile != null && tile.highlighted)
+                            if (tile != null && tile.highlighted && !tile.CompareTag("EnemyHighlightedBox"))
                             {
                                 validMove = true;
                                 
@@ -260,7 +260,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                            if (tile != null && tile.highlighted)
+                            if (tile != null && tile.highlighted && !tile.CompareTag("EnemyHighlightedBox"))
                             {
                                 validMove = true;
                                 
@@ -290,7 +290,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                            if (tile != null && tile.highlighted)
+                            if (tile != null && tile.highlighted && !tile.CompareTag("EnemyHighlightedBox"))
                             {
                                 validMove = true;
                                 
@@ -343,6 +343,8 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.moveButtonPressed = false;
                 }
@@ -383,7 +385,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                            if (tile != null && tile.highlighted)
+                            if (tile != null && tile.highlighted && !tile.CompareTag("EnemyHighlightedBox"))
                             {
                                 validMove = true;
                                 
@@ -409,7 +411,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         for (int i = 0; i < hits.Length; i++)
                         {
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                            if (tile != null && tile.highlighted)
+                            if (tile != null && tile.highlighted && !tile.CompareTag("EnemyHighlightedBox"))
                             {
                                 validMove = true;
                                 
@@ -440,7 +442,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                            if (tile != null && tile.highlighted)
+                            if (tile != null && tile.highlighted && !tile.CompareTag("EnemyHighlightedBox"))
                             {
                                 validMove = true;
                                 
@@ -470,7 +472,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
-                            if (tile != null && tile.highlighted)
+                            if (tile != null && tile.highlighted && !tile.CompareTag("EnemyHighlightedBox"))
                             {
                                 validMove = true;
                                 
@@ -529,6 +531,8 @@ public class PlayerControllerOnGrid : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.moveButtonPressed = false;
                 }

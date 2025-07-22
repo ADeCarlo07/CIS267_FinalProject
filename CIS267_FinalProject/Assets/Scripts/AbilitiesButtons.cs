@@ -204,6 +204,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -347,6 +349,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -393,6 +397,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -423,6 +429,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -457,6 +465,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -487,6 +497,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -521,6 +533,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -551,6 +565,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -585,6 +601,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -615,6 +633,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -652,6 +672,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -683,6 +705,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -721,6 +745,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -754,6 +780,8 @@ public class AbilitiesButtons : MonoBehaviour
                     EnemyPathfinding.enemyTurn = true;
                     EnemyMovementLeftRight.enemyTurn = true;
                     EnemyMovementUpDown.enemyTurn = true;
+                    EnemyMovementLeftRightV2.enemyTurn = true;
+                    EnemyMovementUpDownV2.enemyTurn = true;
 
                     PlayerUIButtons.buttonPressed = false;
                     PlayerUIButtons.abilitiesButtonPressed = false;
@@ -970,6 +998,8 @@ public class AbilitiesButtons : MonoBehaviour
                 EnemyPathfinding.enemyTurn = true;
                 EnemyMovementLeftRight.enemyTurn = true;
                 EnemyMovementUpDown.enemyTurn = true;
+                EnemyMovementLeftRightV2.enemyTurn = true;
+                EnemyMovementUpDownV2.enemyTurn = true;
 
                 PlayerUIButtons.buttonPressed = false;
                 PlayerUIButtons.abilitiesButtonPressed = false;

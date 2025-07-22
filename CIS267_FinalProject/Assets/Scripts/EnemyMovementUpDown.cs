@@ -28,8 +28,13 @@ public class EnemyMovementUpDown : MonoBehaviour
         {
             if (attackRadius.GetComponent<AttackRadius>().playerInRadius != true)
             {
-                Debug.Log("Moving");
+                attackRadius.SetActive(false);
                 MoveUpDown();
+
+                //I had to do this because when certain attack rads were on the enemy some combat symbols weren't
+                //being deleted on the grid. But, making its active self false and turning it back on after a short
+                //delay causes all symbols to be deleted and nothing left behind.
+                StartCoroutine(Wait());
 
             }
         }
@@ -139,5 +144,11 @@ public class EnemyMovementUpDown : MonoBehaviour
         transform.position = targetPos;
 
 
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(.2f);
+        attackRadius.SetActive(true);
     }
 }

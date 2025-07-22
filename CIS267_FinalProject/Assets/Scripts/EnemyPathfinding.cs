@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Cinemachine.IInputAxisOwner.AxisDescriptor;
 
@@ -14,6 +15,10 @@ public class EnemyPathfinding : MonoBehaviour
     private float timeToMove = 0.2f;
     public static bool enemyTurn;
     public GameObject attackRadius;
+    public bool isFinalBoss = false;
+
+    public GameObject[] attackRads;
+    private int curIndex = 0;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,8 +34,24 @@ public class EnemyPathfinding : MonoBehaviour
         {
             if (attackRadius.GetComponent<AttackRadius>().playerInRadius != true)
             {
+                if (isFinalBoss)
+                {
+                    attackRads[curIndex].SetActive(false);
+                    FindingPath();
+                    StartCoroutine(BossAttackRadius());
+                 
+                }
+                else
+                {
+                    attackRadius.SetActive(false);
+                    FindingPath();
 
-                FindingPath();
+                    //I had to do this because when certain attack rads were on the enemy some combat symbols weren't
+                    //being deleted on the grid. But, making its active self false and turning it back on after a short
+                    //delay causes all symbols to be deleted and nothing left behind.
+                    StartCoroutine(Wait(attackRadius));
+                }
+                
             }
  
         }
@@ -161,6 +182,29 @@ public class EnemyPathfinding : MonoBehaviour
 
         transform.position = targetPos;
 
+        
+    }
+
+    private IEnumerator BossAttackRadius()
+    {
+        for (int i = 0; i < attackRads.Length; i++)
+        {
+            attackRads[i].SetActive(false);
+        }
+        yield return new WaitForSeconds(.2f);
+        attackRads[curIndex].SetActive(true);
+        curIndex++;
+        if (curIndex >= attackRads.Length)
+        {
+            curIndex = 0;
+        }
+        attackRads[curIndex].SetActive(false);
+    }
+
+    private IEnumerator Wait(GameObject r)
+    {
+        yield return new WaitForSeconds(.2f);
+        r.SetActive(true);
         
     }
 }

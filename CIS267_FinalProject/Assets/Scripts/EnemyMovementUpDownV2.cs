@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using static Unity.Cinemachine.IInputAxisOwner.AxisDescriptor;
 
-public class EnemyMovementLeftRight : MonoBehaviour
+public class EnemyMovementUpDownV2 : MonoBehaviour
 {
+    //for short explanation on code go to EnemyMovementLeftRight script, these two are
+    //basically the same just different directions
+
     private Vector3 origPos;
     private Vector3 targetPos;
     public float tileSize = 1.4f;
@@ -12,6 +14,7 @@ public class EnemyMovementLeftRight : MonoBehaviour
     private bool occupiedByPlayer;
     public static bool enemyTurn;
     public GameObject attackRadius;
+    private bool movingUp = true;
     private bool movingLeft = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,45 +29,36 @@ public class EnemyMovementLeftRight : MonoBehaviour
         {
             if (attackRadius.GetComponent<AttackRadius>().playerInRadius != true)
             {
-               
                 attackRadius.SetActive(false);
-
-                MoveLeftToRight();
+                MoveUpDown();
 
                 //I had to do this because when certain attack rads were on the enemy some combat symbols weren't
                 //being deleted on the grid. But, making its active self false and turning it back on after a short
                 //delay causes all symbols to be deleted and nothing left behind.
                 StartCoroutine(Wait());
 
-
             }
         }
     }
 
-    private void MoveLeftToRight()
+    private void MoveUpDown()
     {
         Vector3 direction;
 
-        //starting off, if you're moving left then direction is left, vice versa
-        if (movingLeft)
+        if (movingUp)
         {
-            direction = Vector3.left;
+            direction = Vector3.up;
         }
         else
         {
-            direction = Vector3.right;
+            direction = Vector3.down;
         }
 
-
-        //you want the enemy to move in the direction (being left or right) * the tile size so
-        //its a nice blocky movement on the grid
         Vector3 tarPos = transform.position + (direction * tileSize);
 
         occupiedByPlayer = false;
         validMove = false;
 
-        //you're storing att the hits in the target direction (where the enemy
-        //wants to go) and seeing if it 1. is occupied by player, 2. valid move
         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
         foreach (Collider2D hit in hits)
@@ -74,12 +68,7 @@ public class EnemyMovementLeftRight : MonoBehaviour
                 occupiedByPlayer = true;
             }
 
-            //Enemy highlighted box is yellow. Enemy can't move
-            //outside of highlighted box
             HighlightBox tile = hit.GetComponent<HighlightBox>();
-
-            //if there is a tile (not outside of grid) and its highlighted
-            //move is valid
             if (tile != null && tile.highlighted)
             {
                 validMove = true;
@@ -88,57 +77,59 @@ public class EnemyMovementLeftRight : MonoBehaviour
 
         if (validMove && !occupiedByPlayer)
         {
-            StartCoroutine(MoveEnemy(transform.position + (direction * tileSize)));
+            StartCoroutine(MoveEnemy(tarPos));
+            enemyTurn = false;
+            PlayerControllerOnGrid.playerTurn = true;
         }
         else
         {
-            //set it to the opposite of what it is, same stuff but reverse direction
-            //I don't remember why exactly I did this, but it was the only
-            //thing that would work for me :(
-            movingLeft = !movingLeft;
+            movingUp = !movingUp;
 
-            Vector3 reverseDir;
+            Vector3 horizontalDir;
+
             if (movingLeft)
             {
-                reverseDir = Vector3.left;
+                horizontalDir = Vector3.left;
             }
             else
             {
-                reverseDir = Vector3.right;
+                horizontalDir = Vector3.right;
             }
 
-            Vector3 reversePos = transform.position + reverseDir * tileSize;
+            Vector3 nextHorizontalPos = transform.position + (horizontalDir * tileSize);
 
-            Collider2D[] reverseHits = Physics2D.OverlapCircleAll(reversePos, 0.3f);
-            bool reverseValid = false;
-            bool reverseOccupied = false;
+            bool columnValid = false;
+            bool columnOccupied = false;
 
-            foreach (Collider2D hit in reverseHits)
+            Collider2D[] sideHits = Physics2D.OverlapCircleAll(nextHorizontalPos, 0.3f);
+            foreach (Collider2D hit in sideHits)
             {
                 if (hit.CompareTag("Player"))
                 {
-                    reverseOccupied = true;
+                    columnOccupied = true;
                 }
 
                 HighlightBox tile = hit.GetComponent<HighlightBox>();
-
                 if (tile != null && tile.highlighted)
                 {
-                    reverseValid = true;
+                    columnValid = true;
                 }
             }
 
-            if (reverseValid && !reverseOccupied)
+            if (columnValid && !columnOccupied)
             {
-                StartCoroutine(MoveEnemy(reversePos));
+                StartCoroutine(MoveEnemy(nextHorizontalPos));
+                enemyTurn = false;
+                PlayerControllerOnGrid.playerTurn = true;
+            }
+            else
+            {
+                //Flip column direction if blocked
+                movingLeft = !movingLeft;
             }
         }
 
-        //after enemy has moved it's not their turn anymore and
-        //player can do turn
-
-        enemyTurn = false;
-        PlayerControllerOnGrid.playerTurn = true;
+       
 
     }
 

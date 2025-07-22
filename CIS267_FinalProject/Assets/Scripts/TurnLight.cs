@@ -25,7 +25,7 @@ public class TurnLight : MonoBehaviour
             }
            
         }
-        else if (EnemyPathfinding.enemyTurn || EnemyMovementUpDown.enemyTurn || EnemyMovementLeftRight.enemyTurn)
+        else if (EnemyPathfinding.enemyTurn || EnemyMovementUpDown.enemyTurn || EnemyMovementLeftRight.enemyTurn || EnemyMovementLeftRightV2.enemyTurn || EnemyMovementUpDownV2.enemyTurn)
         {
             //Debug.Log("Enemy Turn");
             PlayerTurnLight.gameObject.SetActive(false);

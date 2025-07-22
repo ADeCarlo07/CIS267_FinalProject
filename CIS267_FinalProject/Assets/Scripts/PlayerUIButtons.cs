@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 //commenting this out for now to be able to make the build
 //using UnityEditor.Build.Content;
@@ -322,9 +323,17 @@ public class PlayerUIButtons : MonoBehaviour
 
     public void SkipTurnButton()
     {
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(.2f);
         EnemyPathfinding.enemyTurn = true;
         EnemyMovementUpDown.enemyTurn = true;
         EnemyMovementLeftRight.enemyTurn = true;
+        EnemyMovementLeftRightV2.enemyTurn = true;
+        EnemyMovementUpDownV2.enemyTurn = true;
         PlayerControllerOnGrid.playerTurn = false;
     }
 }

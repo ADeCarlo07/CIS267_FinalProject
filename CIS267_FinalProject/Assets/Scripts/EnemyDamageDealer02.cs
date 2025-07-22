@@ -17,18 +17,19 @@ public class EnemyDamageDealer02 : MonoBehaviour
     {
         //for enemies that move left to right on grid, since movement is simple their
         //attacks deal extra damage
-        if (!damageDealt && attackRadius.GetComponent<AttackRadius>().playerInRadius && EnemyMovementLeftRight.enemyTurn)
+        if (!damageDealt && attackRadius.GetComponent<AttackRadius>().playerInRadius && (EnemyMovementLeftRight.enemyTurn && EnemyMovementLeftRightV2.enemyTurn))
         {
             Debug.Log("Damage Taken");
             player.GetComponent<HealthBarManager>().TakeDamage(40);
             damageDealt = true;
 
             EnemyMovementLeftRight.enemyTurn = false;
+            EnemyMovementLeftRightV2.enemyTurn = false;
             PlayerControllerOnGrid.playerTurn = true;
             PlayerControllerOnGrid.ableToMove = true;
         }
 
-        if (!EnemyMovementLeftRight.enemyTurn)
+        if (!EnemyMovementLeftRight.enemyTurn && !EnemyMovementLeftRightV2.enemyTurn)
         {
             damageDealt = false;
         }
