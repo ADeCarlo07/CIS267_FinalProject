@@ -7,9 +7,6 @@ public class EnemyDamageDealer03 : MonoBehaviour
     private bool damageDealt;
     private bool isBoss;
 
-    public GameObject[] attackRads;
-    private bool playerInRange;
-    private int curIndex;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,29 +19,24 @@ public class EnemyDamageDealer03 : MonoBehaviour
     {
         if (isBoss)
         {
-            GameObject currentRad = attackRads[curIndex];
-            playerInRange = currentRad.GetComponent<AttackRadius>().playerInRadius;
 
-            if (!damageDealt && playerInRange && EnemyPathfinding.enemyTurn)
+            if (!damageDealt && !AttackRadius.canMove && EnemyPathfinding.enemyTurn)
             {
                 Debug.Log("Damage Taken");
-                player.GetComponent<HealthBarManager>().TakeDamage(10);
+                player.GetComponent<HealthBarManager>().TakeDamage(20);
                 damageDealt = true;
 
                 EnemyPathfinding.enemyTurn = false;
-                PlayerControllerOnGrid.playerTurn = true;
-
-                curIndex++;
-                if (curIndex >= attackRads.Length)
-                {
-                    curIndex = 0;
-                }
+                PlayerControllerOnGrid.playerTurn = true;      
             }
 
             if (!EnemyPathfinding.enemyTurn)
             {
                 damageDealt = false;
+     
             }
+
+            
         }
         else
         {

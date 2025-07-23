@@ -41,6 +41,14 @@ public class PlayerUIButtons : MonoBehaviour
 
     public TextMeshProUGUI[] InventorySlots = new TextMeshProUGUI[3];
 
+
+
+    //there has to be a small delay between skipping becuase
+    //there are major bugs when the player spams it
+    private bool canSkipTurn = true;
+    private float skipCooldown = .25f;
+    private float lastSkipTime = 0f;
+
     private void Start()
     {
         for (int i = 0; i < InventorySlots.Length; i++)
@@ -58,6 +66,11 @@ public class PlayerUIButtons : MonoBehaviour
     }
     void Update()
     {
+        if (!canSkipTurn && Time.time - lastSkipTime >= skipCooldown)
+        {
+            canSkipTurn = true;
+        }
+
         if (buttonPressed == true)
         {
             move.enabled = false;
@@ -323,17 +336,21 @@ public class PlayerUIButtons : MonoBehaviour
 
     public void SkipTurnButton()
     {
-        StartCoroutine(Wait());
-    }
+        if (!canSkipTurn)
+        {
+            return;
+        }
 
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(.2f);
         EnemyPathfinding.enemyTurn = true;
         EnemyMovementUpDown.enemyTurn = true;
         EnemyMovementLeftRight.enemyTurn = true;
         EnemyMovementLeftRightV2.enemyTurn = true;
         EnemyMovementUpDownV2.enemyTurn = true;
         PlayerControllerOnGrid.playerTurn = false;
+
+        canSkipTurn = false;
+        lastSkipTime = Time.time;
     }
+
+ 
 }

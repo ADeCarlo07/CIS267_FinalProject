@@ -42,23 +42,33 @@ public class PlayerControllerOnOverworld : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("SlicePickUp"))
+        if (SceneManager.GetActiveScene().name == "Level01")
         {
-            GameManager.instance.FindSlice();
-            Destroy(collision.gameObject);
-        }
+            if (collision.gameObject.CompareTag("SlicePickUp"))
+            {
+                GameManager.instance.FindSlice();
+                Destroy(collision.gameObject);
+            }
 
-        if (collision.gameObject.CompareTag("ShutDownPickUp"))
-        {
-            GameManager.instance.FindShutDown();
-            Destroy(collision.gameObject);
-        }
+            if (collision.gameObject.CompareTag("ShutDownPickUp"))
+            {
+                GameManager.instance.FindShutDown();
+                Destroy(collision.gameObject);
+            }
 
-        if (collision.gameObject.CompareTag("SeedShotPickUp"))
-        {
-            GameManager.instance.FindSeedShot();
-            Destroy(collision.gameObject);
+            if (collision.gameObject.CompareTag("SeedShotPickUp"))
+            {
+                GameManager.instance.FindSeedShot();
+                Destroy(collision.gameObject);
+            }
+
+            if (collision.gameObject.CompareTag("LifeLeechPickUp"))
+            {
+                GameManager.instance.FindLifeLeech();
+                Destroy(collision.gameObject);
+            }
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -30,6 +30,7 @@ TagManager:
   - Level03_Enemy03
   - Level03_Enemy02
   - Level03_Enemy01
+  - LifeLeechPickUp
   layers:
   - Default
   - TransparentFX

@@ -32,16 +32,20 @@ public class EnemyPathfinding : MonoBehaviour
     {
         if (enemyTurn)
         {
-            if (attackRadius.GetComponent<AttackRadius>().playerInRadius != true)
+            if (isFinalBoss)
             {
-                if (isFinalBoss)
+
+                if (AttackRadius.canMove)
                 {
                     attackRads[curIndex].SetActive(false);
                     FindingPath();
                     StartCoroutine(BossAttackRadius());
-                 
                 }
-                else
+
+            }
+            else
+            {
+                if (attackRadius.GetComponent<AttackRadius>().playerInRadius != true)
                 {
                     attackRadius.SetActive(false);
                     FindingPath();
@@ -51,9 +55,9 @@ public class EnemyPathfinding : MonoBehaviour
                     //delay causes all symbols to be deleted and nothing left behind.
                     StartCoroutine(Wait(attackRadius));
                 }
-                
+
             }
- 
+
         }
     }
 
@@ -189,7 +193,7 @@ public class EnemyPathfinding : MonoBehaviour
     {
         for (int i = 0; i < attackRads.Length; i++)
         {
-            attackRads[i].SetActive(false);
+                attackRads[i].SetActive(false);
         }
         yield return new WaitForSeconds(.2f);
         attackRads[curIndex].SetActive(true);
