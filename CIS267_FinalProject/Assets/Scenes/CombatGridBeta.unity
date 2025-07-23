@@ -998,7 +998,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 690151442}
+      - m_Target: {fileID: 911178231}
         m_TargetAssemblyTypeName: ItemUser, Assembly-CSharp
         m_MethodName: UseItem
         m_Mode: 5
@@ -2416,7 +2416,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 690151442}
+      - m_Target: {fileID: 911178231}
         m_TargetAssemblyTypeName: ItemUser, Assembly-CSharp
         m_MethodName: UseItem
         m_Mode: 5
@@ -3170,7 +3170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -273.95, y: -16}
+  m_AnchoredPosition: {x: -213.7, y: -16}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &341391985
@@ -6795,8 +6795,6 @@ GameObject:
   - component: {fileID: 690151439}
   - component: {fileID: 690151438}
   - component: {fileID: 690151437}
-  - component: {fileID: 690151436}
-  - component: {fileID: 690151442}
   m_Layer: 0
   m_Name: Player
   m_TagString: OtherPlayer
@@ -6831,18 +6829,6 @@ Transform:
   - {fileID: 1545067266}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &690151436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690151434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e91e7ec84adbb45a315b27be1f41de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &690151437
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6991,21 +6977,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &690151442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690151434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecb3a7e32f0e37e4c8a0fe09b38f9f3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 690151434}
-  InventoryPanel: {fileID: 330283257}
-  button: {fileID: 777071842}
 --- !u!1 &693532838
 GameObject:
   m_ObjectHideFlags: 0
@@ -9470,6 +9441,8 @@ GameObject:
   - component: {fileID: 911178226}
   - component: {fileID: 911178225}
   - component: {fileID: 911178227}
+  - component: {fileID: 911178231}
+  - component: {fileID: 911178232}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9601,6 +9574,7 @@ MonoBehaviour:
   movementRadius: {fileID: 745108671}
   moveButton: {fileID: 777071842}
   abilityHolder: {fileID: 631176980}
+  inventoryHolder: {fileID: 330283257}
 --- !u!4 &911178230
 Transform:
   m_ObjectHideFlags: 0
@@ -9616,6 +9590,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &911178231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911178224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb3a7e32f0e37e4c8a0fe09b38f9f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 690151434}
+  InventoryPanel: {fileID: 330283257}
+  button: {fileID: 777071842}
+--- !u!114 &911178232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911178224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e91e7ec84adbb45a315b27be1f41de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &917705298
 GameObject:
   m_ObjectHideFlags: 0
@@ -9700,7 +9701,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 690151442}
+      - m_Target: {fileID: 911178231}
         m_TargetAssemblyTypeName: ItemUser, Assembly-CSharp
         m_MethodName: UseItem
         m_Mode: 5

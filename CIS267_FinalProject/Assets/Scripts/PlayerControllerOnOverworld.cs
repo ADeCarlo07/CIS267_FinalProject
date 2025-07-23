@@ -68,6 +68,36 @@ public class PlayerControllerOnOverworld : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+
+        if (SceneManager.GetActiveScene().name == "Level02")
+        {
+            if (collision.gameObject.CompareTag("DetonatePickUp"))
+            {
+                GameManager.instance.FindDetonate();
+                Destroy(collision.gameObject);
+            }
+
+            if (collision.gameObject.CompareTag("BurrowPickUp"))
+            {
+                GameManager.instance.FindBurrow();
+                Destroy(collision.gameObject);
+            }
+
+            if (collision.gameObject.CompareTag("SporeCloudPickUp"))
+            {
+                GameManager.instance.FindSporeCloud();
+                Destroy(collision.gameObject);
+            }
+        }
+
+        if (SceneManager.GetActiveScene().name == "Level03")
+        {
+            if (collision.gameObject.CompareTag("LazerBeamPickUp"))
+            {
+                GameManager.instance.FindLazerBeam();
+                Destroy(collision.gameObject);
+            }
+        }
         
     }
 

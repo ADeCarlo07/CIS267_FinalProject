@@ -31,6 +31,10 @@ TagManager:
   - Level03_Enemy02
   - Level03_Enemy01
   - LifeLeechPickUp
+  - DetonatePickUp
+  - BurrowPickUp
+  - SporeCloudPickUp
+  - LazerBeamPickUp
   layers:
   - Default
   - TransparentFX

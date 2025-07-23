@@ -26,6 +26,7 @@ public class ItemUser : MonoBehaviour
                 close = true;
             }
             InventoryManager.playerItems[0] = null;
+
             //button.Select();
         }
         if (callerID == "two")
@@ -71,6 +72,11 @@ public class ItemUser : MonoBehaviour
             InventoryPanel.SetActive(false);
             PlayerControllerOnGrid.playerTurn = false;
             EnemyPathfinding.enemyTurn = true;
+            EnemyMovementLeftRight.enemyTurn = true;
+            EnemyMovementLeftRightV2.enemyTurn = true;
+            EnemyMovementUpDown.enemyTurn = true;
+            EnemyMovementUpDownV2.enemyTurn = true;
+            PlayerUIButtons.buttonPressed = false;
             //button.Select();
 
         }
