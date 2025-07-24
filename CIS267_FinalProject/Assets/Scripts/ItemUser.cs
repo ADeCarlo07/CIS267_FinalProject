@@ -12,9 +12,9 @@ public class ItemUser : MonoBehaviour
     {
         //close boolean prevents repeated code
         bool close = false;
-
-        if(callerID == "one")
+        if (callerID == "one")
         {
+
             if (InventoryManager.playerItems[0] == null)
             {
                 //do nothing

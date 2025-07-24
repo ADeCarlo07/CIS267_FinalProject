@@ -6,7 +6,7 @@ public class InventoryManager : MonoBehaviour
     //this script holds a player's inventory and allows one to modify it at will
     //it's required to be attached to the player prefab
 
-    public static string[] playerItems = {"HealthPotion", null, null};
+    public static string[] playerItems = {null, null, "HealthPotion"};
     //the players inventory is stored via a string array of 3
     //WARNING: this system requires universal names for all internal items
     //we don't want 2 items called "healthPotion" and "HealthPotion"

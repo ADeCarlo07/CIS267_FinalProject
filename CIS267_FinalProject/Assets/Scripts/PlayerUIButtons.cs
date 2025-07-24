@@ -40,6 +40,10 @@ public class PlayerUIButtons : MonoBehaviour
 
 
     public TextMeshProUGUI[] InventorySlots = new TextMeshProUGUI[3];
+    public Image[] InventoryImages = new Image[3];
+
+    public Sprite healthPotion;
+    public Sprite emptyItem;
 
 
 
@@ -49,21 +53,21 @@ public class PlayerUIButtons : MonoBehaviour
     private float skipCooldown = .25f;
     private float lastSkipTime = 0f;
 
-    private void Start()
-    {
-        for (int i = 0; i < InventorySlots.Length; i++)
-        {
-            if (InventoryManager.GetItem(i) != null)
-            {
-                InventorySlots[i].text = InventoryManager.GetItem(i);
-            }
-            else
-            {
-                InventorySlots[i].text = "Empty Slot";
+    //private void Start()
+    //{
+    //    for (int i = 0; i < InventorySlots.Length; i++)
+    //    {
+    //        if (InventoryManager.GetItem(i) != null)
+    //        {
+    //            InventorySlots[i].text = InventoryManager.GetItem(i);
+    //        }
+    //        else
+    //        {
+    //            InventorySlots[i].text = "Empty Slot";
 
-            }
-        }
-    }
+    //        }
+    //    }
+    //}
     void Update()
     {
         if (!canSkipTurn && Time.time - lastSkipTime >= skipCooldown)
@@ -322,10 +326,28 @@ public class PlayerUIButtons : MonoBehaviour
 
         for (int i = 0; i < InventorySlots.Length; i++)
         {
-            if(InventoryManager.GetItem(i) != null)
+            if (InventoryManager.GetItem(i) != null)
             {
                 InventorySlots[i].text = InventoryManager.GetItem(i);
-            }    
+                if (InventoryManager.GetItem(i) == "HealthPotion")
+                {
+                    InventoryImages[i].sprite = healthPotion;
+                }
+            }
+            else
+            {
+                InventorySlots[i].text = "EmptySlot";
+            }
+            if (InventoryManager.GetItem(i) == "HealthPotion")
+            {
+                InventoryImages[i].sprite = healthPotion;
+                InventoryImages[i].preserveAspect = true;
+            }
+            else
+            {
+                InventoryImages[i].sprite = emptyItem;
+
+            }
         }
 
         inventoryHolder.SetActive(true);
