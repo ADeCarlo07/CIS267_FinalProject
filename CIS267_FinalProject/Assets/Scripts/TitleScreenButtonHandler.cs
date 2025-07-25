@@ -31,9 +31,19 @@ public class TitleScreenButtonHandler : MonoBehaviour
             activeCredits = Instantiate(creditsPrefab);
         }
     }
+
+    //these functions are edited from PauseMenu.cs so this script can just be used in the game over
+    //scene as well
+
     public void exitToMainMenu()
     {
         Destroy(GameManager.instance);
         SceneManager.LoadScene("TitleScreen");
+    }
+    public void startOver()
+    {
+        Destroy(GameManager.instance);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("LoadingScreen");
     }
 }

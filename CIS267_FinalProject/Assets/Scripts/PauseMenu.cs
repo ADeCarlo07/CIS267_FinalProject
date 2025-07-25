@@ -46,37 +46,44 @@ public class PauseMenu : MonoBehaviour
         //because things weren't properly resetting - Allison
         isPaused = false;
 
-        if (GameManager.instance.sliceFound == true)
-        {
-            GameManager.instance.sliceFound = false;
-        }
-        if (GameManager.instance.shutDownFound == true)
-        {
-            GameManager.instance.shutDownFound = false;
-        }
-        if (GameManager.instance.seedShotFound == true)
-        {
-            GameManager.instance.seedShotFound = false;
-        }
-        
-        if (GameManager.instance.IsEnemyDefeated("Level01_Enemy01"))
-        {
-            GameManager.instance.RemoveDefeatedEnemy("Level01_Enemy01");
-        }
-        if (GameManager.instance.IsEnemyDefeated("Level01_Enemy02"))
-        {
+        //if (GameManager.instance.sliceFound == true)
+        //{
+        //    GameManager.instance.sliceFound = false;
+        //}
+        //if (GameManager.instance.shutDownFound == true)
+        //{
+        //    GameManager.instance.shutDownFound = false;
+        //}
+        //if (GameManager.instance.seedShotFound == true)
+        //{
+        //    GameManager.instance.seedShotFound = false;
+        //}
 
-            GameManager.instance.RemoveDefeatedEnemy("Level01_Enemy02");
-        }
-        if (GameManager.instance.IsEnemyDefeated("Level01_Enemy03"))
-        {
-            GameManager.instance.RemoveDefeatedEnemy("Level01_Enemy03");
-        }
+        //if (GameManager.instance.IsEnemyDefeated("Level01_Enemy01"))
+        //{
+        //    GameManager.instance.RemoveDefeatedEnemy("Level01_Enemy01");
+        //}
+        //if (GameManager.instance.IsEnemyDefeated("Level01_Enemy02"))
+        //{
 
-       
-        SceneManager.LoadScene("Level01");
+        //    GameManager.instance.RemoveDefeatedEnemy("Level01_Enemy02");
+        //}
+        //if (GameManager.instance.IsEnemyDefeated("Level01_Enemy03"))
+        //{
+        //    GameManager.instance.RemoveDefeatedEnemy("Level01_Enemy03");
+        //}
+
+        //gonna try something else real quick - nick
+        Destroy(GameManager.instance);
 
         Time.timeScale = 1;
+        SceneManager.LoadScene("LoadingScreen");
+       
+        //SceneManager.LoadScene("Level01");
+
+
+
+        
     }
     public void viewControls()
     {
