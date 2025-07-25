@@ -31,4 +31,9 @@ public class TitleScreenButtonHandler : MonoBehaviour
             activeCredits = Instantiate(creditsPrefab);
         }
     }
+    public void exitToMainMenu()
+    {
+        Destroy(GameManager.instance);
+        SceneManager.LoadScene("TitleScreen");
+    }
 }
