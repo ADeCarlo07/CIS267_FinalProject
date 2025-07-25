@@ -1387,6 +1387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb708ef945d7c624b9598ae40a5826fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creditsPrefab: {fileID: 5656687788300707902, guid: 8e40b34c8623d1847ba6cb49e0af239e, type: 3}
 --- !u!1 &1289016911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,7 +1742,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1710939799}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955601256}
+        m_TargetAssemblyTypeName: TitleScreenButtonHandler, Assembly-CSharp
+        m_MethodName: creditsButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1710939799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,7 +1947,7 @@ GameObject:
   - component: {fileID: 1861245167}
   - component: {fileID: 1861245166}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ButtonPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

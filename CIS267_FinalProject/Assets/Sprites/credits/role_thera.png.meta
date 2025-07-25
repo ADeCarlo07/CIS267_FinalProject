@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 7060a6267e68b84488f262d124289acb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6431735606098494950
+    second: role_thera_0
+  - first:
+      213: 2853954016362225814
+    second: role_thera_1
+  - first:
+      213: 874943814568835029
+    second: role_thera_2
+  - first:
+      213: 1093146222692424495
+    second: role_thera_3
+  - first:
+      213: 3895380490635791515
+    second: role_thera_4
+  - first:
+      213: -2344118881783893779
+    second: role_thera_5
+  - first:
+      213: -4533034003023401735
+    second: role_thera_6
+  - first:
+      213: 6784383325701269334
+    second: role_thera_7
+  - first:
+      213: -377979939203737796
+    second: role_thera_8
+  - first:
+      213: -671767412762497366
+    second: role_thera_9
+  - first:
+      213: 6538326666214189512
+    second: role_thera_10
+  - first:
+      213: 1913269487360051501
+    second: role_thera_11
+  - first:
+      213: -8852296401810953058
+    second: role_thera_12
+  - first:
+      213: -8045545547608369767
+    second: role_thera_13
+  - first:
+      213: -8981782811950709267
+    second: role_thera_14
+  - first:
+      213: 6520614784829091756
+    second: role_thera_15
+  - first:
+      213: 3045180353868585383
+    second: role_thera_16
+  - first:
+      213: 521947218259329836
+    second: role_thera_17
+  - first:
+      213: -9028037740373360695
+    second: role_thera_18
+  - first:
+      213: 7092099265159862942
+    second: role_thera_19
+  - first:
+      213: -6233698355905903355
+    second: role_thera_20
+  - first:
+      213: 721439292303301150
+    second: role_thera_21
+  - first:
+      213: 6060550450343437609
+    second: role_thera_22
+  - first:
+      213: -6537354428570590510
+    second: role_thera_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: role_thera_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11
+        width: 73
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e58bbaf47d124950800000000000000
+      internalID: 6431735606098494950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1
+        width: 54
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690e1969e084b9720800000000000000
+      internalID: 2853954016362225814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 12
+        width: 55
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d7fcc183cc642c00800000000000000
+      internalID: 874943814568835029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_3
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 60
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b5423a2b2ab2f00800000000000000
+      internalID: 1093146222692424495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_4
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 9
+        width: 63
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c4559eaeb2f0630800000000000000
+      internalID: 3895380490635791515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_5
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 12
+        width: 48
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de03cf3fb44087fd0800000000000000
+      internalID: -2344118881783893779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_6
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 12
+        width: 55
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fce50f579d6711c0800000000000000
+      internalID: -4533034003023401735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_7
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 11
+        width: 67
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657e18480b8f62e50800000000000000
+      internalID: 6784383325701269334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_8
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 11
+        width: 74
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3799877f3521caf0800000000000000
+      internalID: -377979939203737796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_9
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 88
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaeab96e8176da6f0800000000000000
+      internalID: -671767412762497366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_10
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 12
+        width: 73
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c9292d167dccba50800000000000000
+      internalID: 6538326666214189512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_11
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 12
+        width: 67
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2980b9367c4d8a10800000000000000
+      internalID: 1913269487360051501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_12
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 12
+        width: 48
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ce693f253562580800000000000000
+      internalID: -8852296401810953058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_13
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 12
+        width: 55
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 995d39a93fa785090800000000000000
+      internalID: -8045545547608369767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_14
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 12
+        width: 73
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de508fbbe1c4a5380800000000000000
+      internalID: -8981782811950709267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_15
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 88
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cafe5ee5990ed7a50800000000000000
+      internalID: 6520614784829091756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_16
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 9
+        width: 62
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a9d555d567a24a20800000000000000
+      internalID: 3045180353868585383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_17
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 14
+        width: 64
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23c9d7ca345e3700800000000000000
+      internalID: 521947218259329836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_18
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 88
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cfb93af187f5b280800000000000000
+      internalID: -9028037740373360695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_19
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 12
+        width: 67
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9a99a3c4b23c6260800000000000000
+      internalID: 7092099265159862942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_20
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 11
+        width: 72
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505ca437f547d79a0800000000000000
+      internalID: -6233698355905903355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_21
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 11
+        width: 31
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a5fb8c631130a00800000000000000
+      internalID: 721439292303301150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_22
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 11
+        width: 32
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925ed0046866b1450800000000000000
+      internalID: 6060550450343437609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: role_thera_23
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 11
+        width: 31
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2293a98c6a645a0800000000000000
+      internalID: -6537354428570590510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      role_thera_0: 6431735606098494950
+      role_thera_1: 2853954016362225814
+      role_thera_10: 6538326666214189512
+      role_thera_11: 1913269487360051501
+      role_thera_12: -8852296401810953058
+      role_thera_13: -8045545547608369767
+      role_thera_14: -8981782811950709267
+      role_thera_15: 6520614784829091756
+      role_thera_16: 3045180353868585383
+      role_thera_17: 521947218259329836
+      role_thera_18: -9028037740373360695
+      role_thera_19: 7092099265159862942
+      role_thera_2: 874943814568835029
+      role_thera_20: -6233698355905903355
+      role_thera_21: 721439292303301150
+      role_thera_22: 6060550450343437609
+      role_thera_23: -6537354428570590510
+      role_thera_3: 1093146222692424495
+      role_thera_4: 3895380490635791515
+      role_thera_5: -2344118881783893779
+      role_thera_6: -4533034003023401735
+      role_thera_7: 6784383325701269334
+      role_thera_8: -377979939203737796
+      role_thera_9: -671767412762497366
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
