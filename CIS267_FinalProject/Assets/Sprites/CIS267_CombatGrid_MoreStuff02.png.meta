@@ -1,49 +1,49 @@
 fileFormatVersion: 2
-guid: 61945f3762ceb5e4ca1f0681335ab958
+guid: da93104983c59a94d84ae6e5a9b25f96
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7696686752242649561
-    second: CIS267_CombatGrid_MoreStuff_0
+      213: 6703654121333522085
+    second: CIS267_CombatGrid_MoreStuff02_0
   - first:
-      213: -6015436030836819183
-    second: CIS267_CombatGrid_MoreStuff_1
+      213: 1498861543565445876
+    second: CIS267_CombatGrid_MoreStuff02_1
   - first:
-      213: 8727666521835199789
-    second: CIS267_CombatGrid_MoreStuff_2
+      213: -2661561250244440230
+    second: CIS267_CombatGrid_MoreStuff02_2
   - first:
-      213: 4078457782517892000
-    second: CIS267_CombatGrid_MoreStuff_3
+      213: 1990588537624267156
+    second: CIS267_CombatGrid_MoreStuff02_3
   - first:
-      213: -3399930615227480023
-    second: CIS267_CombatGrid_MoreStuff_4
+      213: -5650711824622399770
+    second: CIS267_CombatGrid_MoreStuff02_4
   - first:
-      213: 2434600627281719220
-    second: CIS267_CombatGrid_MoreStuff_5
+      213: -7558222922612048000
+    second: CIS267_CombatGrid_MoreStuff02_5
   - first:
-      213: 418069386130918345
-    second: CIS267_CombatGrid_MoreStuff_6
+      213: 5990673691703209853
+    second: CIS267_CombatGrid_MoreStuff02_6
   - first:
-      213: -2583888513232886791
-    second: CIS267_CombatGrid_MoreStuff_7
+      213: 1743877708962466294
+    second: CIS267_CombatGrid_MoreStuff02_7
   - first:
-      213: -489545488965150572
-    second: CIS267_CombatGrid_MoreStuff_8
+      213: 6380004716920728030
+    second: CIS267_CombatGrid_MoreStuff02_8
   - first:
-      213: -6446113321984709724
-    second: CIS267_CombatGrid_MoreStuff_9
+      213: -8346221525258674103
+    second: CIS267_CombatGrid_MoreStuff02_9
   - first:
-      213: 6022393462003380001
-    second: CIS267_CombatGrid_MoreStuff_10
+      213: 1140541943299126935
+    second: CIS267_CombatGrid_MoreStuff02_10
   - first:
-      213: 2954884226144749398
-    second: CIS267_CombatGrid_MoreStuff_11
+      213: 1308508093570853136
+    second: CIS267_CombatGrid_MoreStuff02_11
   - first:
-      213: 1524312278022979410
-    second: CIS267_CombatGrid_MoreStuff_12
+      213: -2173847468724207084
+    second: CIS267_CombatGrid_MoreStuff02_12
   - first:
-      213: 6626634134845492871
-    second: CIS267_CombatGrid_MoreStuff_13
+      213: -3187132289892061510
+    second: CIS267_CombatGrid_MoreStuff02_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +87,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -165,13 +165,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_0
+      name: CIS267_CombatGrid_MoreStuff02_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1288
-        width: 122
-        height: 1264
+        y: 1289
+        width: 121
+        height: 1262
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7263f197d20ef2590800000000000000
-      internalID: -7696686752242649561
+      spriteID: 5aefa27e7e9280d50800000000000000
+      internalID: 6703654121333522085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_1
+      name: CIS267_CombatGrid_MoreStuff02_1
       rect:
         serializedVersion: 2
-        x: 188
-        y: 2208
-        width: 224
-        height: 224
+        x: 189
+        y: 2209
+        width: 222
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11bb2e41dc0e48ca0800000000000000
-      internalID: -6015436030836819183
+      spriteID: 4fa46bfe1a60dc410800000000000000
+      internalID: 1498861543565445876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_2
+      name: CIS267_CombatGrid_MoreStuff02_2
       rect:
         serializedVersion: 2
-        x: 638
-        y: 2308
-        width: 1604
-        height: 252
+        x: 649
+        y: 2309
+        width: 92
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +224,196 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2d5e00e576ee1970800000000000000
-      internalID: 8727666521835199789
+      spriteID: a5f4c3bf42c301bd0800000000000000
+      internalID: -2661561250244440230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_3
+      name: CIS267_CombatGrid_MoreStuff02_3
       rect:
         serializedVersion: 2
-        x: 638
+        x: 759
+        y: 2349
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4990f077abdff9b10800000000000000
+      internalID: 1990588537624267156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CIS267_CombatGrid_MoreStuff02_4
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 2239
+        width: 72
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ee4845c883a491b0800000000000000
+      internalID: -5650711824622399770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CIS267_CombatGrid_MoreStuff02_5
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 2259
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08f7e7c0c4ccb1790800000000000000
+      internalID: -7558222922612048000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CIS267_CombatGrid_MoreStuff02_6
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1969
+        width: 222
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f6f3f8bf5232350800000000000000
+      internalID: 5990673691703209853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CIS267_CombatGrid_MoreStuff02_7
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1929
+        width: 142
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f90e6e698f733810800000000000000
+      internalID: 1743877708962466294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CIS267_CombatGrid_MoreStuff02_8
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1839
+        width: 382
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed96061cc745a8850800000000000000
+      internalID: 6380004716920728030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CIS267_CombatGrid_MoreStuff02_9
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1739
+        width: 382
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940ec323eb34c2c80800000000000000
+      internalID: -8346221525258674103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CIS267_CombatGrid_MoreStuff02_10
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 1289
+        width: 152
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79637c5cad404df00800000000000000
+      internalID: 1140541943299126935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CIS267_CombatGrid_MoreStuff02_11
+      rect:
+        serializedVersion: 2
+        x: 639
         y: 0
-        width: 1922
-        height: 2552
+        width: 1602
+        height: 1601
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +422,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a3086e9eb7999830800000000000000
-      internalID: 4078457782517892000
+      spriteID: 019a307ad21c82210800000000000000
+      internalID: 1308508093570853136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_4
+      name: CIS267_CombatGrid_MoreStuff02_12
       rect:
         serializedVersion: 2
-        x: 758
-        y: 2348
-        width: 34
-        height: 34
+        x: 19
+        y: 639
+        width: 462
+        height: 312
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +444,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 928046a7e1501d0d0800000000000000
-      internalID: -3399930615227480023
+      spriteID: 412cfc6ae31f4d1e0800000000000000
+      internalID: -2173847468724207084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_5
+      name: CIS267_CombatGrid_MoreStuff02_13
       rect:
         serializedVersion: 2
-        x: 648
-        y: 2238
-        width: 74
-        height: 44
+        x: 159
+        y: 319
+        width: 152
+        height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,184 +466,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4bfe1171f5079c120800000000000000
-      internalID: 2434600627281719220
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_6
-      rect:
-        serializedVersion: 2
-        x: 728
-        y: 2258
-        width: 74
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9cb8cc344e74dc500800000000000000
-      internalID: 418069386130918345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_7
-      rect:
-        serializedVersion: 2
-        x: 188
-        y: 1968
-        width: 224
-        height: 224
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f3aa85561f242cd0800000000000000
-      internalID: -2583888513232886791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_8
-      rect:
-        serializedVersion: 2
-        x: 808
-        y: 1928
-        width: 144
-        height: 314
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 49856d4b8f8c439f0800000000000000
-      internalID: -489545488965150572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_9
-      rect:
-        serializedVersion: 2
-        x: 188
-        y: 1838
-        width: 384
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ab203d261eca86a0800000000000000
-      internalID: -6446113321984709724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_10
-      rect:
-        serializedVersion: 2
-        x: 188
-        y: 1738
-        width: 384
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 12fa85812f6d39350800000000000000
-      internalID: 6022393462003380001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_11
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 1288
-        width: 154
-        height: 144
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65743cb4c8bd10920800000000000000
-      internalID: 2954884226144749398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_12
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 638
-        width: 464
-        height: 314
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 25f7352d0f1772510800000000000000
-      internalID: 1524312278022979410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CIS267_CombatGrid_MoreStuff_13
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 318
-        width: 154
-        height: 204
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 78e81ffd2a886fb50800000000000000
-      internalID: 6626634134845492871
+      spriteID: abe6ec8811805c3d0800000000000000
+      internalID: -3187132289892061510
       vertices: []
       indices: 
       edges: []
@@ -476,7 +476,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 11279c2a615925741a645dd820d7b7e5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -484,24 +484,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
-    nameFileIdTable:
-      CIS267_CombatGrid_MoreStuff_0: -7696686752242649561
-      CIS267_CombatGrid_MoreStuff_1: -6015436030836819183
-      CIS267_CombatGrid_MoreStuff_10: 6022393462003380001
-      CIS267_CombatGrid_MoreStuff_11: 2954884226144749398
-      CIS267_CombatGrid_MoreStuff_12: 1524312278022979410
-      CIS267_CombatGrid_MoreStuff_13: 6626634134845492871
-      CIS267_CombatGrid_MoreStuff_2: 8727666521835199789
-      CIS267_CombatGrid_MoreStuff_3: 4078457782517892000
-      CIS267_CombatGrid_MoreStuff_4: -3399930615227480023
-      CIS267_CombatGrid_MoreStuff_5: 2434600627281719220
-      CIS267_CombatGrid_MoreStuff_6: 418069386130918345
-      CIS267_CombatGrid_MoreStuff_7: -2583888513232886791
-      CIS267_CombatGrid_MoreStuff_8: -489545488965150572
-      CIS267_CombatGrid_MoreStuff_9: -6446113321984709724
+      entries: []
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

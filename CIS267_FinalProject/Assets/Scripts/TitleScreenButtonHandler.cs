@@ -43,6 +43,9 @@ public class TitleScreenButtonHandler : MonoBehaviour
     public void startOver()
     {
         Destroy(GameManager.instance);
+        InventoryManager.playerItems[0] = null;
+        InventoryManager.playerItems[1] = null;
+        InventoryManager.playerItems[2] = null;
         Time.timeScale = 1;
         SceneManager.LoadScene("LoadingScreen");
     }

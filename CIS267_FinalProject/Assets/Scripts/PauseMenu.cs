@@ -75,6 +75,9 @@ public class PauseMenu : MonoBehaviour
 
         //gonna try something else real quick - nick
         Destroy(GameManager.instance);
+        InventoryManager.playerItems[0] = null;
+        InventoryManager.playerItems[1] = null;
+        InventoryManager.playerItems[2] = null;
 
         Time.timeScale = 1;
         SceneManager.LoadScene("LoadingScreen");

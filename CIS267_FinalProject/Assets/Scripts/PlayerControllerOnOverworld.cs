@@ -107,18 +107,21 @@ public class PlayerControllerOnOverworld : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Level01_Enemy01"))
             {
+                GameManager.instance.lastScene(SceneManager.GetActiveScene().name);
                 GameManager.instance.SavePlayerPos(transform.position);
                 SceneManager.LoadScene("Level01_CombatGrid01");
             }
 
             if (collision.gameObject.CompareTag("Level01_Enemy02"))
             {
+                GameManager.instance.lastScene(SceneManager.GetActiveScene().name);
                 GameManager.instance.SavePlayerPos(transform.position);
                 SceneManager.LoadScene("Level01_CombatGrid02");
             }
 
             if (collision.gameObject.CompareTag("Level01_Enemy03"))
             {
+                GameManager.instance.lastScene(SceneManager.GetActiveScene().name);
                 GameManager.instance.SavePlayerPos(transform.position);
                 SceneManager.LoadScene("Level01_CombatGrid03");
             }
@@ -129,18 +132,21 @@ public class PlayerControllerOnOverworld : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Level02_Enemy01"))
             {
+                GameManager.instance.lastScene(SceneManager.GetActiveScene().name);
                 GameManager.instance.SavePlayerPos(transform.position);
                 SceneManager.LoadScene("Level02_CombatGrid01");
             }
 
             if (collision.gameObject.CompareTag("Level02_Enemy02"))
             {
+                GameManager.instance.lastScene(SceneManager.GetActiveScene().name);
                 GameManager.instance.SavePlayerPos(transform.position);
                 SceneManager.LoadScene("Level02_CombatGrid02");
             }
 
             if (collision.gameObject.CompareTag("Level02_Enemy03"))
             {
+                GameManager.instance.lastScene(SceneManager.GetActiveScene().name);
                 GameManager.instance.SavePlayerPos(transform.position);
                 SceneManager.LoadScene("Level02_CombatGrid03");
             }
@@ -151,18 +157,21 @@ public class PlayerControllerOnOverworld : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Level03_Enemy01"))
             {
+                GameManager.instance.lastScene(SceneManager.GetActiveScene().name);
                 GameManager.instance.SavePlayerPos(transform.position);
                 SceneManager.LoadScene("Level03_CombatGrid01");
             }
 
             if (collision.gameObject.CompareTag("Level03_Enemy02"))
             {
+                GameManager.instance.lastScene(SceneManager.GetActiveScene().name);
                 GameManager.instance.SavePlayerPos(transform.position);
                 SceneManager.LoadScene("Level03_CombatGrid02");
             }
 
             if (collision.gameObject.CompareTag("Level03_Enemy03"))
             {
+                GameManager.instance.lastScene(SceneManager.GetActiveScene().name);
                 GameManager.instance.SavePlayerPos(transform.position);
                 SceneManager.LoadScene("Level03_CombatGrid03");
             }

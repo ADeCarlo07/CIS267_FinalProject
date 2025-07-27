@@ -1,7 +1,6 @@
-using JetBrains.Annotations;
+
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,7 +23,10 @@ public class GameManager : MonoBehaviour
     public bool sliceFound = false;
     public string selectedPlantAbilityID;
     public string selectedRobotAbilityID;
-
+    public int level01SceneLoadCount;
+    public int level02SceneLoadCount;
+    public int level03SceneLoadCount;
+    public string lastLoadedScene;
 
 
     //ENEMY TRACKING
@@ -38,9 +40,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+      
         //if it doesn't exist make it so
         if (instance == null)
         {
+            level01SceneLoadCount = 0;
+            level02SceneLoadCount = 0;
+            level03SceneLoadCount = 0;
+
             instance = this;
             //will not be destroyed across scenes
             DontDestroyOnLoad(gameObject);
@@ -50,6 +57,16 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void lastScene(string scene)
+    {
+        lastLoadedScene = scene;
+    }
+
+    public string GetLastScene()
+    {
+        return lastLoadedScene;
     }
 
     //going to have more of a purpose when we do the collectablity of the

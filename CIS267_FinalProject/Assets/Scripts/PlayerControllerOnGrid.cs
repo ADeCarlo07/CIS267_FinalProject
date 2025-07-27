@@ -68,6 +68,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
     public GameObject abilityHolder;
     private bool occupiedByEnemy;
     public GameObject inventoryHolder;
+    public bool occupiedByObstacle;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -189,12 +190,18 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
                         occupiedByEnemy = false;
+                        occupiedByObstacle = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
                             if (hits[i].CompareTag("Enemy"))
                             {
                                 occupiedByEnemy = true;
+                            }
+
+                            if (hits[i].CompareTag("Obstacle"))
+                            {
+                                occupiedByObstacle = true;
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
@@ -205,7 +212,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
                         }
 
-                        if (validMove && !occupiedByEnemy)
+                        if (validMove && !occupiedByEnemy && !occupiedByObstacle)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.right));
                         }
@@ -220,12 +227,18 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
                         occupiedByEnemy = false;
+                        occupiedByObstacle = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
                             if (hits[i].CompareTag("Enemy"))
                             {
                                 occupiedByEnemy = true;
+                            }
+
+                            if (hits[i].CompareTag("Obstacle"))
+                            {
+                                occupiedByObstacle = true;
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
@@ -236,7 +249,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
                         }
 
-                        if (validMove && !occupiedByEnemy)
+                        if (validMove && !occupiedByEnemy && !occupiedByObstacle)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.left));
                         }
@@ -251,12 +264,18 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
                         occupiedByEnemy = false;
+                        occupiedByObstacle = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
                             if (hits[i].CompareTag("Enemy"))
                             {
                                 occupiedByEnemy = true;
+                            }
+
+                            if (hits[i].CompareTag("Obstacle"))
+                            {
+                                occupiedByObstacle = true;
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
@@ -267,7 +286,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
                         }
 
-                        if (validMove && !occupiedByEnemy)
+                        if (validMove && !occupiedByEnemy && !occupiedByObstacle)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.up));
                         }
@@ -281,12 +300,18 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
                         occupiedByEnemy = false;
+                        occupiedByObstacle = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
                             if (hits[i].CompareTag("Enemy"))
                             {
                                 occupiedByEnemy = true;
+                            }
+
+                            if (hits[i].CompareTag("Obstacle"))
+                            {
+                                occupiedByObstacle = true;
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
@@ -297,7 +322,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
                         }
 
-                        if (validMove && !occupiedByEnemy)
+                        if (validMove && !occupiedByEnemy && !occupiedByObstacle)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.down));
                         }
@@ -376,12 +401,18 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
                         occupiedByEnemy = false;
+                        occupiedByObstacle = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
                             if (hits[i].CompareTag("Enemy"))
                             {
                                 occupiedByEnemy = true;
+                            }
+
+                            if (hits[i].CompareTag("Obstacle"))
+                            {
+                                occupiedByObstacle = true;
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
@@ -392,7 +423,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
                         }
 
-                        if (validMove && !occupiedByEnemy)
+                        if (validMove && !occupiedByEnemy && !occupiedByObstacle)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.right));
                         }
@@ -407,9 +438,23 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
                         occupiedByEnemy = false;
+                        occupiedByObstacle = false;
                         validMove = false;
+
+
                         for (int i = 0; i < hits.Length; i++)
                         {
+
+                            if (hits[i].CompareTag("Enemy"))
+                            {
+                                occupiedByEnemy = true;
+                            }
+
+                            if (hits[i].CompareTag("Obstacle"))
+                            {
+                                occupiedByObstacle = true;
+                            }
+
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
                             if (tile != null && tile.highlighted && !tile.CompareTag("EnemyHighlightedBox"))
                             {
@@ -418,7 +463,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
                         }
 
-                        if (validMove && !occupiedByEnemy)
+                        if (validMove && !occupiedByEnemy && !occupiedByObstacle)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.left));
                         }
@@ -433,12 +478,18 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
                         occupiedByEnemy = false;
+                        occupiedByObstacle = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
                             if (hits[i].CompareTag("Enemy"))
                             {
                                 occupiedByEnemy = true;
+                            }
+
+                            if (hits[i].CompareTag("Obstacle"))
+                            {
+                                occupiedByObstacle = true;
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
@@ -449,7 +500,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
                         }
 
-                        if (validMove && !occupiedByEnemy)
+                        if (validMove && !occupiedByEnemy && !occupiedByObstacle)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.up));
                         }
@@ -463,12 +514,18 @@ public class PlayerControllerOnGrid : MonoBehaviour
                         Collider2D[] hits = Physics2D.OverlapCircleAll(tarPos, 0.3f);
 
                         occupiedByEnemy = false;
+                        occupiedByObstacle = false;
                         validMove = false;
                         for (int i = 0; i < hits.Length; i++)
                         {
                             if (hits[i].CompareTag("Enemy"))
                             {
                                 occupiedByEnemy = true;
+                            }
+
+                            if (hits[i].CompareTag("Obstacle"))
+                            {
+                                occupiedByObstacle = true;
                             }
 
                             HighlightBox tile = hits[i].GetComponent<HighlightBox>();
@@ -479,7 +536,7 @@ public class PlayerControllerOnGrid : MonoBehaviour
                             }
                         }
 
-                        if (validMove && !occupiedByEnemy)
+                        if (validMove && !occupiedByEnemy && !occupiedByObstacle)
                         {
                             StartCoroutine(MoveSelectedCharacter(Vector3.down));
                         }

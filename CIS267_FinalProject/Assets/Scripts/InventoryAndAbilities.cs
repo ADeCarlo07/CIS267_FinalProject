@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using TMPro;
+
 //commenting this out for now to be able to make the build
 //using UnityEditor.Playables;
 using UnityEngine;
@@ -22,6 +24,8 @@ public class InventoryAndAbilities : MonoBehaviour
     public Button shutDown;
     public Button seedShot;
     public Button lifeLeech;
+    public GameObject boxUI2;
+
 
     public string burrowID = "Burrow";
     public string sporeCloudID = "Spore Cloud";
@@ -36,6 +40,12 @@ public class InventoryAndAbilities : MonoBehaviour
 
     private List<Button> plantAbilities = new List<Button>();
     private List<Button> robotAbilities = new List<Button>();
+
+    public TextMeshProUGUI[] InventorySlots = new TextMeshProUGUI[3];
+    public Image[] InventoryImages = new Image[3];
+
+    public Sprite healthPotion;
+    public Sprite emptyItem;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -194,7 +204,7 @@ public class InventoryAndAbilities : MonoBehaviour
         }
 
 
-        if (!PauseMenu.isPaused && !abilButtonPressed)
+        if (!PauseMenu.isPaused && !abilButtonPressed && !inventoryButtonPressed)
         {
             if (Gamepad.current == null)
             {
@@ -247,7 +257,7 @@ public class InventoryAndAbilities : MonoBehaviour
             }
             else
             {
-                
+
                 if (Gamepad.current.bButton.wasPressedThisFrame && buttonPressed)
                 {
                     boxUI.SetActive(false);
@@ -258,10 +268,38 @@ public class InventoryAndAbilities : MonoBehaviour
                 }
             }
         }
+
+        if (!PauseMenu.isPaused && inventoryButtonPressed)
+        {
+            if (Gamepad.current == null)
+            {
+
+                if (Keyboard.current.uKey.wasPressedThisFrame)
+                {
+                    boxUI2.SetActive(false);
+                    inventoryButtonPressed = false;
+                    abil.enabled = true;
+                    inventory.enabled = true;
+                    abil.Select();
+                }
+            }
+            else
+            {
+
+                if (Gamepad.current.bButton.wasPressedThisFrame && buttonPressed)
+                {
+                    boxUI2.SetActive(false);
+                    inventoryButtonPressed = false;
+                    abil.enabled = true;
+                    inventory.enabled = true;
+                    abil.Select();
+                }
+            }
+        }
     }
 
 
-    public void AbilitiesButton()
+public void AbilitiesButton()
     {
         abil.enabled = false;
         inventory.enabled = false;
@@ -432,7 +470,36 @@ public class InventoryAndAbilities : MonoBehaviour
 
     public void InventoryButton()
     {
+        abil.enabled = false;
+        inventory.enabled = false;
+        inventoryButtonPressed = true;
+        boxUI2.SetActive(true);
 
+        for (int i = 0; i < InventorySlots.Length; i++)
+        {
+            if (InventoryManager.GetItem(i) != null)
+            {
+                InventorySlots[i].text = InventoryManager.GetItem(i);
+                if (InventoryManager.GetItem(i) == "HealthPotion")
+                {
+                    InventoryImages[i].sprite = healthPotion;
+                }
+            }
+            else
+            {
+                InventorySlots[i].text = "EmptySlot";
+            }
+            if (InventoryManager.GetItem(i) == "HealthPotion")
+            {
+                InventoryImages[i].sprite = healthPotion;
+                InventoryImages[i].preserveAspect = true;
+            }
+            else
+            {
+                InventoryImages[i].sprite = emptyItem;
+
+            }
+        }
 
     }
 

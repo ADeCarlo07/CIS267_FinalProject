@@ -5,6 +5,7 @@ public class OverworldEnemy : MonoBehaviour
 {
     public string enemyID;
     private int digit;
+    public GameObject healthPotion;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,11 +15,11 @@ public class OverworldEnemy : MonoBehaviour
 
             digit = Random.Range(0, 101);
             
-            if (digit <= 25)
+            if (digit <= 50)
             {
                 Debug.Log("health potion drop");
 
-                // health potion
+                healthPotion.SetActive(true);
             }
   
         }

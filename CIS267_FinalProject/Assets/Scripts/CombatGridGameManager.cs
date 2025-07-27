@@ -25,7 +25,28 @@ public class CombatGridGameManager : MonoBehaviour
         {
             Debug.Log("enemy defeated");
             GameManager.instance.EnemyDefeated(enemyID);
-            SceneManager.LoadScene("Level01");
+
+            if (GameManager.instance.GetLastScene() == "Level01")
+            {
+                SceneManager.LoadScene("Level01");
+            }
+            if (GameManager.instance.GetLastScene() == "Level02")
+            {
+                SceneManager.LoadScene("Level02");
+            }
+            if (GameManager.instance.GetLastScene() == "Level03")
+            {
+                if (GameManager.instance.IsEnemyDefeated("Level03_Enemy03"))
+                {
+                    SceneManager.LoadScene("TitleScreen");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Level03");
+                }
+                    
+            }
+            
         }
     }
 
