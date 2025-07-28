@@ -23,7 +23,7 @@ public class EnemyDamageDealer03 : MonoBehaviour
             if (!damageDealt && !AttackRadius.canMove && EnemyPathfinding.enemyTurn)
             {
                 Debug.Log("Damage Taken");
-                player.GetComponent<HealthBarManager>().TakeDamage(20);
+                player.GetComponent<HealthBarManager>().TakeDamage(40);
                 damageDealt = true;
 
                 EnemyPathfinding.enemyTurn = false;
@@ -43,7 +43,7 @@ public class EnemyDamageDealer03 : MonoBehaviour
             if (!damageDealt && attackRadius.GetComponent<AttackRadius>().playerInRadius && EnemyPathfinding.enemyTurn)
             {
                 Debug.Log("Damage Taken");
-                player.GetComponent<HealthBarManager>().TakeDamage(10);
+                player.GetComponent<HealthBarManager>().TakeDamage(30);
                 damageDealt = true;
 
                 EnemyPathfinding.enemyTurn = false;

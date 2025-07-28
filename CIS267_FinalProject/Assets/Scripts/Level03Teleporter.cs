@@ -28,6 +28,8 @@ public class Level03Teleporter : MonoBehaviour
             //cam02.transform.position = teleportLocation.transform.position;
 
             cam02.Priority = 20;
+
+            GameManager.instance.level03CamSetActive = false;
         }
     }
 }

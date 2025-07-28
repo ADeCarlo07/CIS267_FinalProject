@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public int level02SceneLoadCount;
     public int level03SceneLoadCount;
     public string lastLoadedScene;
+    public bool level03CamSetActive = true;
 
 
     //ENEMY TRACKING

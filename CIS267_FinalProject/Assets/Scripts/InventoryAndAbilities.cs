@@ -53,6 +53,9 @@ public class InventoryAndAbilities : MonoBehaviour
     {
         plantAbilities.AddRange(new[] { burrow, sporeCloud, lifeLeech, seedShot});
         robotAbilities.AddRange(new[] { lazerBeam, shutDown, detonate, slice});
+
+        abil.enabled = true;
+        inventory.enabled = true;
     }
 
     // Update is called once per frame

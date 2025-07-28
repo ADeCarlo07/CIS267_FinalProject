@@ -32783,6 +32783,7 @@ MonoBehaviour:
   burrow: {fileID: 1789710584}
   sporeCloud: {fileID: 1789710584}
   lazerBeam: {fileID: 1789710584}
+  level03Cam: {fileID: 0}
 --- !u!114 &1839505493
 MonoBehaviour:
   m_ObjectHideFlags: 0

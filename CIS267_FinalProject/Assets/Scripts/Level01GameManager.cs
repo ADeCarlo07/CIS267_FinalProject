@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +14,7 @@ public class Level01GameManager : MonoBehaviour
     public GameObject burrow;
     public GameObject sporeCloud;
     public GameObject lazerBeam;
-
+    public GameObject level03Cam;
    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -93,6 +94,10 @@ public class Level01GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level03")
         {
+            if (!GameManager.instance.level03CamSetActive)
+            {
+                level03Cam.SetActive(false);
+            }
             if (GameManager.instance.lazerBeamFound && lazerBeam != null)
             {
                 lazerBeam.SetActive(false);

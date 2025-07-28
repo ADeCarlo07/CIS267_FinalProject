@@ -36,13 +36,14 @@ public class CombatGridGameManager : MonoBehaviour
             }
             if (GameManager.instance.GetLastScene() == "Level03")
             {
-                if (GameManager.instance.IsEnemyDefeated("Level03_Enemy03"))
+                if (!GameManager.instance.IsEnemyDefeated("Level03_Enemy03"))
                 {
-                    SceneManager.LoadScene("TitleScreen");
+                   
+                    SceneManager.LoadScene("Level03");
                 }
                 else
                 {
-                    SceneManager.LoadScene("Level03");
+                    SceneManager.LoadScene("TitleScreen");
                 }
                     
             }
