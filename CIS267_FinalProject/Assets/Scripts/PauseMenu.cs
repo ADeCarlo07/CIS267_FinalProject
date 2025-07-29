@@ -11,9 +11,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject creditsPrefab;
     public GameObject controlsPrefab;
     private GameObject activeCredits;
+
+    public AudioClip pauseSFX;
+    private AudioSource audioSource;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -34,6 +37,8 @@ public class PauseMenu : MonoBehaviour
         {
             if (!isPaused)
             {
+                audioSource.PlayOneShot(pauseSFX);
+
                 pauseCanvas.SetActive(true);
                 Time.timeScale = 0;
                 isPaused = true;

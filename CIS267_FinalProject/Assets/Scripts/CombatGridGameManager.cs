@@ -12,10 +12,14 @@ public class CombatGridGameManager : MonoBehaviour
     private bool isCrediting = false;
     public GameObject creditsPrefab;
     private GameObject activeCredits;
+
+    public AudioClip encounterSFX;
+    private AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(encounterSFX);
     }
 
     // Update is called once per frame
