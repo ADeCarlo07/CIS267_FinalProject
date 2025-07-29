@@ -20,6 +20,10 @@ public class TitleScreenButtonHandler : MonoBehaviour
     {
         SceneManager.LoadScene("Level01");
     }
+    public void firstStart()
+    {
+        SceneManager.LoadScene("Story");
+    }
     public void exitGame()
     {
         Application.Quit();
