@@ -161,6 +161,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -485,7 +498,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CIS267_CombatGrid_MoreStuff02_0: 6703654121333522085
+      CIS267_CombatGrid_MoreStuff02_1: 1498861543565445876
+      CIS267_CombatGrid_MoreStuff02_10: 1140541943299126935
+      CIS267_CombatGrid_MoreStuff02_11: 1308508093570853136
+      CIS267_CombatGrid_MoreStuff02_12: -2173847468724207084
+      CIS267_CombatGrid_MoreStuff02_13: -3187132289892061510
+      CIS267_CombatGrid_MoreStuff02_2: -2661561250244440230
+      CIS267_CombatGrid_MoreStuff02_3: 1990588537624267156
+      CIS267_CombatGrid_MoreStuff02_4: -5650711824622399770
+      CIS267_CombatGrid_MoreStuff02_5: -7558222922612048000
+      CIS267_CombatGrid_MoreStuff02_6: 5990673691703209853
+      CIS267_CombatGrid_MoreStuff02_7: 1743877708962466294
+      CIS267_CombatGrid_MoreStuff02_8: 6380004716920728030
+      CIS267_CombatGrid_MoreStuff02_9: -8346221525258674103
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

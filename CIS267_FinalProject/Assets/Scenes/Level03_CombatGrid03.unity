@@ -22705,6 +22705,7 @@ MonoBehaviour:
   enemyID: Level03_Enemy03
   player: {fileID: 223424258}
   enemy: {fileID: 1146201014}
+  creditsPrefab: {fileID: 5656687788300707902, guid: 8e40b34c8623d1847ba6cb49e0af239e, type: 3}
 --- !u!114 &1812497955
 MonoBehaviour:
   m_ObjectHideFlags: 0

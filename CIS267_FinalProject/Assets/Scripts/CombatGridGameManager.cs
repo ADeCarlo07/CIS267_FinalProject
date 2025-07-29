@@ -7,6 +7,11 @@ public class CombatGridGameManager : MonoBehaviour
     public string enemyID;
     public GameObject player;
     public GameObject enemy;
+
+    //just used for final screen
+    private bool isCrediting = false;
+    public GameObject creditsPrefab;
+    private GameObject activeCredits;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,11 +48,22 @@ public class CombatGridGameManager : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene("TitleScreen");
+                    //SceneManager.LoadScene("TitleScreen");
+                    if (!isCrediting)
+                    {
+                        isCrediting = true;
+                        activeCredits = Instantiate(creditsPrefab);
+                    }
                 }
                     
             }
             
+        }
+
+
+        if (isCrediting && (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.JoystickButton0)))
+        {
+            SceneManager.LoadScene("TitleScreen");
         }
     }
 
