@@ -5,11 +5,12 @@ public class TitleScreenButtonHandler : MonoBehaviour
 {
     private bool isCrediting = false;
     public GameObject creditsPrefab;
+    public GameObject controlsPrefab;
     private GameObject activeCredits;
 
     void Update()
     {
-        if (isCrediting && Input.anyKeyDown)
+        if (isCrediting && (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.JoystickButton0)))
         {
             isCrediting = false;
             Destroy(activeCredits);
@@ -18,6 +19,10 @@ public class TitleScreenButtonHandler : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadScene("Level01");
+    }
+    public void firstStart()
+    {
+        SceneManager.LoadScene("Story");
     }
     public void exitGame()
     {
@@ -29,6 +34,14 @@ public class TitleScreenButtonHandler : MonoBehaviour
         {
             isCrediting = true;
             activeCredits = Instantiate(creditsPrefab);
+        }
+    }
+    public void controlsButton()
+    {
+        if (!isCrediting)
+        {
+            isCrediting = true;
+            activeCredits = Instantiate(controlsPrefab);
         }
     }
 

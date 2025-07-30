@@ -15,6 +15,7 @@ public class Level01GameManager : MonoBehaviour
     public GameObject sporeCloud;
     public GameObject lazerBeam;
     public GameObject level03Cam;
+
    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -103,7 +104,6 @@ public class Level01GameManager : MonoBehaviour
                 lazerBeam.SetActive(false);
             }
         }
-
 
     }
 }

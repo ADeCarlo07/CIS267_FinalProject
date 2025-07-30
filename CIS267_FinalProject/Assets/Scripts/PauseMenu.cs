@@ -1,19 +1,34 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
     public static bool isPaused = false;
+    public GameObject pauseFirstButton;
+    private bool isCrediting = false;
+    public GameObject creditsPrefab;
+    public GameObject controlsPrefab;
+    private GameObject activeCredits;
+
+    public AudioClip pauseSFX;
+    private AudioSource audioSource;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
 
     void Update()
     {
         pausingTheGame();
+
+        if (isCrediting && (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.JoystickButton0)))
+        {
+            isCrediting = false;
+            Destroy(activeCredits);
+        }
     }
     public void pausingTheGame()
     {
@@ -22,9 +37,13 @@ public class PauseMenu : MonoBehaviour
         {
             if (!isPaused)
             {
+                audioSource.PlayOneShot(pauseSFX);
+
                 pauseCanvas.SetActive(true);
                 Time.timeScale = 0;
                 isPaused = true;
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(pauseFirstButton);
             }
             else
             {
@@ -90,11 +109,19 @@ public class PauseMenu : MonoBehaviour
     }
     public void viewControls()
     {
-
+        if (!isCrediting)
+        {
+            isCrediting = true;
+            activeCredits = Instantiate(controlsPrefab);
+        }
     }
     public void viewCredits()
     {
-
+        if (!isCrediting)
+        {
+            isCrediting = true;
+            activeCredits = Instantiate(creditsPrefab);
+        }
     }
     public void exitToMainMenu()
     {

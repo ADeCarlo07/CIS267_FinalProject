@@ -8,6 +8,7 @@ public class PlayerControllerOnOverworld : MonoBehaviour
     public float moveSpeed;
     private Animator animator;
 
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();

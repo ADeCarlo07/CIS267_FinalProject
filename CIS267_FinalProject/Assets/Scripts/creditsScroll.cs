@@ -10,6 +10,7 @@ public class creditsScroll : MonoBehaviour
     }
     void Update()
     {
-        creditsPanel.anchoredPosition += new Vector2(0, scrollSpeed * Time.deltaTime);
+        //creditsPanel.anchoredPosition += new Vector2(0, scrollSpeed * Time.deltaTime);
+        creditsPanel.anchoredPosition += Vector2.up * scrollSpeed * Time.unscaledDeltaTime;
     }
 }
