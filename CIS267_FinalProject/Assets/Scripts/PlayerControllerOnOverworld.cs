@@ -54,6 +54,7 @@ public class PlayerControllerOnOverworld : MonoBehaviour
             if (collision.gameObject.CompareTag("ShutDownPickUp"))
             {
                 GameManager.instance.FindShutDown();
+                GameManager.instance.changeBooleanShutDownSpecialCase();
                 Destroy(collision.gameObject);
             }
 

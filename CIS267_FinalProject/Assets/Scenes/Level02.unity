@@ -328,6 +328,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1148563268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &30333690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30333691}
+  m_Layer: 0
+  m_Name: Spawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &30333691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30333690}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.66, y: 18.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &59617302
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +993,7 @@ Transform:
   m_GameObject: {fileID: 92502066}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13183424, y: 0.03911996, z: -10}
+  m_LocalPosition: {x: 0.13495685, y: 0.03911996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1072,6 +1103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyID: Level02_Enemy03
   healthPotion: {fileID: 185792225}
+  spawn: {fileID: 1237378741}
 --- !u!61 &93336199
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1980,7 +2012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &185792226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2103,7 +2135,7 @@ Transform:
   m_GameObject: {fileID: 185792225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 27.3, z: 0}
+  m_LocalPosition: {x: -30.41, y: 27.3, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6012,7 +6044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &653305266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6135,7 +6167,7 @@ Transform:
   m_GameObject: {fileID: 653305265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.62, y: 17.56, z: 0}
+  m_LocalPosition: {x: -32.74, y: 17.56, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22186,6 +22218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyID: Level02_Enemy01
   healthPotion: {fileID: 1785522475}
+  spawn: {fileID: 1553880820}
 --- !u!61 &1151830197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22995,6 +23028,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234901374}
   m_CullTransparentMesh: 1
+--- !u!1 &1237378740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1237378741}
+  m_Layer: 0
+  m_Name: Spawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1237378741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237378740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.52, y: 27.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251632661
 GameObject:
   m_ObjectHideFlags: 0
@@ -23391,6 +23455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyID: Level02_Enemy02
   healthPotion: {fileID: 653305265}
+  spawn: {fileID: 30333691}
 --- !u!95 &1261517627
 Animator:
   serializedVersion: 7
@@ -26122,6 +26187,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1553880819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553880820}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1553880820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553880819}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00999999, y: 3.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1555390243
 GameObject:
   m_ObjectHideFlags: 0
@@ -37566,7 +37662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1785522476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37689,7 +37785,7 @@ Transform:
   m_GameObject: {fileID: 1785522475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 2.96, z: 0}
+  m_LocalPosition: {x: -36.63, y: 2.96, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38613,7 +38709,7 @@ MonoBehaviour:
   burrow: {fileID: 1259328040}
   sporeCloud: {fileID: 62007543}
   lazerBeam: {fileID: 699392514}
-  level03Cam: {fileID: 0}
+  level03Cam: {fileID: 699392514}
 --- !u!4 &1840014036
 Transform:
   m_ObjectHideFlags: 0
@@ -41228,8 +41324,11 @@ SceneRoots:
   - {fileID: 85833136}
   - {fileID: 309948232}
   - {fileID: 5366491651098794937}
+  - {fileID: 30333691}
   - {fileID: 1261517625}
+  - {fileID: 1237378741}
   - {fileID: 93336197}
+  - {fileID: 1553880820}
   - {fileID: 1151830194}
   - {fileID: 1348041508}
   - {fileID: 1259328044}

@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public int level03SceneLoadCount;
     public string lastLoadedScene;
     public bool level03CamSetActive = true;
+    public bool shutDownSpecialCase = false;
 
 
     //ENEMY TRACKING
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     //HashSet also provides standard set operations such as union, intersection, and symmetric difference.
 
     private HashSet<string> defeatedEnemies = new HashSet<string>();
+    private HashSet<string> enemiesAlreadyDropped = new HashSet<string>();
 
     private void Awake()
     {
@@ -58,6 +60,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void changeBooleanShutDownSpecialCase()
+    {
+        shutDownSpecialCase = true;
     }
 
     public void lastScene(string scene)
@@ -139,6 +146,11 @@ public class GameManager : MonoBehaviour
         defeatedEnemies.Add(enemyID);
     }
 
+    public void EnemeyDroppedHealth(string enemyID)
+    {
+        enemiesAlreadyDropped.Add(enemyID);
+    }
+
     public void RemoveDefeatedEnemy(string enemyID)
     {
         defeatedEnemies.Remove(enemyID);
@@ -147,6 +159,11 @@ public class GameManager : MonoBehaviour
     public bool IsEnemyDefeated(string enemyID)
     {
         return defeatedEnemies.Contains(enemyID);
+    }
+
+    public bool IsEnemyDropped(string enemyID)
+    {
+        return enemiesAlreadyDropped.Contains(enemyID);
     }
 
     public void SavePlayerPos(Vector3 pos)

@@ -6,6 +6,8 @@ public class OverworldEnemy : MonoBehaviour
     public string enemyID;
     private int digit;
     public GameObject healthPotion;
+    public Transform spawn;
+    private bool alreadyDefeated;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,13 +17,18 @@ public class OverworldEnemy : MonoBehaviour
 
             digit = Random.Range(0, 101);
             
-            if (digit <= 50)
+            if (digit <= 50 && !GameManager.instance.IsEnemyDropped(enemyID))
             {
-                Debug.Log("health potion drop");
+                Debug.Log("health potion drop" + " " + enemyID);
 
-                healthPotion.SetActive(true);
+                Instantiate(healthPotion, gameObject.transform.position, Quaternion.identity);
+                GameManager.instance.EnemeyDroppedHealth(enemyID);
             }
-  
+            else
+            {
+                GameManager.instance.EnemeyDroppedHealth(enemyID);
+            }
+
         }
     }
 
@@ -30,6 +37,5 @@ public class OverworldEnemy : MonoBehaviour
     {
         
     }
-
 
 }

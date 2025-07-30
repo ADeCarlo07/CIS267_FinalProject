@@ -64,7 +64,7 @@ public class Level01GameManager : MonoBehaviour
                 seedShot.SetActive(false);
             }
 
-            if (GameManager.instance.shutDownUsed && shutDown != null)
+            if (GameManager.instance.shutDownSpecialCase && shutDown != null)
             {
                 shutDown.SetActive(false);
             }

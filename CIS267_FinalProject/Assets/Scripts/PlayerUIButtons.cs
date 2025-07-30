@@ -45,6 +45,7 @@ public class PlayerUIButtons : MonoBehaviour
     public Sprite healthPotion;
     public Sprite emptyItem;
 
+    public Button startOfInventory;
 
 
     //there has to be a small delay between skipping becuase
@@ -352,7 +353,7 @@ public class PlayerUIButtons : MonoBehaviour
 
         inventoryHolder.SetActive(true);
         inventoryButtonPressed = true;
-
+        startOfInventory.Select();
         buttonPressed = true;
     }
 

@@ -67,6 +67,10 @@ public class CombatGridGameManager : MonoBehaviour
 
         if (isCrediting && (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.JoystickButton0)))
         {
+            Destroy(GameManager.instance);
+            InventoryManager.playerItems[0] = null;
+            InventoryManager.playerItems[1] = null;
+            InventoryManager.playerItems[2] = null;
             SceneManager.LoadScene("TitleScreen");
         }
     }

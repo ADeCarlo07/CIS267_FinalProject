@@ -15473,6 +15473,7 @@ MonoBehaviour:
   - {fileID: 216235445}
   healthPotion: {fileID: -1743043194500990878, guid: 16a73688683e847449c1380a982e2be4, type: 3}
   emptyItem: {fileID: 2955983761155546030, guid: 24a6e06074aae1440b7eab9218891752, type: 3}
+  startOfInventory: {fileID: 1971044377}
 --- !u!114 &1239662447
 MonoBehaviour:
   m_ObjectHideFlags: 0

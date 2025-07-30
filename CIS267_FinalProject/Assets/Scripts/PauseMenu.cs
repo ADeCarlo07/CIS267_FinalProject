@@ -126,6 +126,9 @@ public class PauseMenu : MonoBehaviour
     public void exitToMainMenu()
     {
         Destroy(GameManager.instance);
+        InventoryManager.playerItems[0] = null;
+        InventoryManager.playerItems[1] = null;
+        InventoryManager.playerItems[2] = null;
         isPaused = false;
         SceneManager.LoadScene("TitleScreen");
         Time.timeScale = 1;
