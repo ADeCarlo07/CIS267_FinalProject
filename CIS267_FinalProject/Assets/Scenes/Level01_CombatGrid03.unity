@@ -13822,7 +13822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1041758355}
-  maxHealth: 100
+  maxHealth: 150
   curHealth: 0
 --- !u!114 &1146201016
 MonoBehaviour:
